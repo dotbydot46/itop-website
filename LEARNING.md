@@ -63,3 +63,7 @@ Photos are generic AI concept imagery, not documentary shop photos or verified l
 
 Try changing an accessory description, then compare it on desktop and mobile. For a new service page, add both the app route and the Pages output route.
 
+
+## Consolidating the older website
+
+`CustomerPages.tsx` brings contact and aftercare journeys into the shared React layout. `StoreDetails.tsx` keeps address, phone, email and weekly hours in one component reused by home and Contact. Support topics and optional repair symptoms are included in the existing review-before-WhatsApp flow. The Pages build creates direct entries for Contact and Support as well as the service pages.

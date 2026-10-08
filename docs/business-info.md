@@ -54,3 +54,11 @@ Keep the current caution to call about holiday or temporary changes. Do not labe
 3. Owner approves supported repairs, actual warranty terms and aftercare process.
 4. Replace demo data only with genuine product/catalogue data; keep AI imagery labelled.
 5. Real Google reviews require a verified source and appropriate attribution; until then use a profile link, not invented quotes or a rating badge.
+
+## Legacy structure integrated into React
+
+Read source from `dotbydot46/iTop` on 8 October 2026, including repairs, screen/battery/charging guides, water-damage diagnostics, unlocking, contact, business-customers and warranty-faq. Added Contact and Warranty/Aftercare pages, repair quote guidance and optional symptoms, support-topic enquiries and local-team content.
+
+The legacy `CONTENT_TO_CONFIRM.txt` explicitly leaves warranty durations, real reviews, stock and trade pricing unconfirmed. Its service tables include £XX demo prices and 6/12/18-month examples. Those were not imported. The legacy 10:00–21:00 hours were not imported either; the user's weekly hours are retained. There are no guaranteed unlocks, data recovery or same-day promises. Setup enquiries refer to ownership, eligibility and official account recovery where relevant.
+
+The old website remains unchanged. Consolidation and redirects can be considered after the React website is final.

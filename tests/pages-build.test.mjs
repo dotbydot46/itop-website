@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 
 test('publishes compiled pages and assets under the GitHub project path', async () => {
-  for (const route of ['', 'repairs/', 'accessories/', 'wholesale/', 'buy-sell/']) {
+  for (const route of ['', 'repairs/', 'accessories/', 'wholesale/', 'buy-sell/', 'contact/', 'support/']) {
     const html = await readFile(`dist/client/${route}index.html`, 'utf8');
     assert(!html.includes('/src/main.jsx'), 'Pages must publish compiled JavaScript');
     const assets = [...html.matchAll(/(?:src|href)="(\/itop-website\/[^"#]+)"/g)].map(match => match[1]);

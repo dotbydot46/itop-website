@@ -17,3 +17,5 @@ Before making substantial visual changes, use the Product Design plugin's `get-c
 When implementing from a selected generated mock, treat that image as the source of truth for layout, component anatomy, density, spacing, color, typography, visible content, and hierarchy.
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.
+
+The user authorised bringing useful content and structure from the legacy `dotbydot46/iTop` project into the React website. Preserve the legacy site until the final website is ready; no deletion or redirect is authorised yet. Contact and Warranty/Aftercare pages, contextual repair details, setup enquiries and local-business enquiry content extend the selected design. Do not copy legacy demo prices or fixed warranty periods. Preferred name and user-supplied weekly hours remain authoritative over legacy content.

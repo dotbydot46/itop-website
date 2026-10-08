@@ -22,6 +22,15 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
         <Icon size={30} weight="light" aria-hidden="true" /><h3>{title}</h3><p>{description}</p><button className="text-button" onClick={() => onEnquire(issue)}>Ask about {issue === 'Not sure' ? 'a fault' : title === 'Charging faults' ? 'charging' : title === 'Liquid damage & diagnostics' ? 'diagnostics' : title === 'Camera, speaker & microphone' ? 'this repair' : title.toLowerCase()}<ArrowUpRight size={17} aria-hidden="true" /></button>
       </article>)}</div>
     </section>
+    <section className="content-section repair-faq" aria-labelledby="guide-title">
+      <div><p className="eyebrow">A MORE USEFUL QUOTE</p><h2 id="guide-title">Describe the fault.<br />Know your options.</h2><p className="visit-note">A few details help the team decide what to check first.</p></div>
+      <div className="faq-list">
+        <details><summary>Screen: what should I tell you?</summary><p>Include the exact model and whether the glass is cracked, the display has lines, the screen is black or touch is not responding. Ask which replacement parts are available and how they differ in price and cover.</p><button className="text-button guide-enquiry" onClick={() => onEnquire('Screen replacement')}>Prepare a screen enquiry</button></details>
+        <details><summary>Battery: what symptoms matter?</summary><p>Tell us about fast drain, shutdowns, battery-health messages and whether charging is also affected. A battery replacement may not resolve a separate cable, port or charging fault.</p><button className="text-button guide-enquiry" onClick={() => onEnquire('Battery replacement')}>Prepare a battery enquiry</button></details>
+        <details><summary>Charging: is it always the port?</summary><p>Charging faults can involve the cable, charger, battery, port or other parts. Tell us whether the cable feels loose, charging is slow or it works only at an angle. Bring your usual cable and charger if possible.</p><button className="text-button guide-enquiry" onClick={() => onEnquire('Charging fault')}>Prepare a charging enquiry</button></details>
+        <details><summary>Liquid exposure: what information helps?</summary><p>Tell us what happened, when it happened, what liquid was involved and what the device does now. Inspection comes before a repair decision. Repair, data recovery and full-device cover cannot be guaranteed.</p><button className="text-button guide-enquiry" onClick={() => onEnquire('Water damage / diagnostics')}>Prepare a diagnostic enquiry</button></details>
+      </div>
+    </section>
     <section className="repair-band repairs-process" aria-labelledby="process-title">
       <div className="repair-intro"><h2 id="process-title">Clear steps.<br />No surprises.</h2><p>An enquiry is the first step—not a booking or a payment.</p></div>
       <ol className="repair-steps"><li><span>01</span><h3>Tell us</h3><p>Your model<br />and the fault.</p></li><li><span>02</span><h3>Confirm</h3><p>Price, parts,<br />time and cover.</p></li><li><span>03</span><h3>Visit</h3><p>Agree the work<br />before it starts.</p></li></ol>
@@ -37,6 +46,6 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
         <details><summary>Do you repair other devices?</summary><p>Ask about your tablet, laptop or other device and include the exact model. iTop will confirm whether the repair and suitable parts are available.</p></details>
       </div>
     </section>
-    <section className="content-section repair-visit" aria-labelledby="repair-visit-title"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2 id="repair-visit-title">Let’s look<br />at your options.</h2></div><div><p className="repair-visit-copy">Send your model and fault before visiting iTop in Catford. We’ll discuss availability, pricing and the next step.</p><div className="visit-actions"><button className="button button-dark" onClick={() => onEnquire()}>Prepare an enquiry</button><a className="text-button" href={siteHref('#visit')}>Visit details</a></div></div></section>
+    <section className="content-section repair-visit" aria-labelledby="repair-visit-title"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2 id="repair-visit-title">Let’s look<br />at your options.</h2></div><div><p className="repair-visit-copy">Send your model and fault before visiting iTop in Catford. We’ll discuss availability, pricing and the next step.</p><div className="visit-actions"><button className="button button-dark" onClick={() => onEnquire()}>Prepare an enquiry</button><a className="text-button" href={siteHref('contact/')}>Visit details</a></div></div></section>
   </>;
 }

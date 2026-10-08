@@ -142,3 +142,11 @@ textarea { resize:vertical; }
 @media(min-width:1550px) { .repair-services { padding-left:max(3.85%,calc((100vw - 1450px)/2)); padding-right:max(3.85%,calc((100vw - 1450px)/2)); } }
 @media(max-width:1100px) { .repair-service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 30px; } .section-heading { align-items:flex-start; flex-direction:column; gap:12px; } }
 @media(max-width:720px) { .repairs-hero { padding:32px 24px 28px; gap:28px; } .repairs-hero .eyebrow { margin-bottom:22px; } .repair-services { padding:24px 24px 36px; } .section-heading h2 { font-size:30px; } .repair-service-grid { grid-template-columns:1fr; } .repair-service { padding:25px 0; } .repair-service h3 { font-size:24px; } .repair-service p { max-width:none; font-size:16px; } .faq-list summary { font-size:17px; } .repair-call { min-height:44px; display:flex; align-items:center; margin-top:10px; } }
+
+/* Customer pages extend the approved design without widening the header. */
+.footer-links { display:flex; flex-wrap:wrap; gap:20px; }
+.footer-links a { padding:6px 0; border-bottom:1px solid currentColor; }
+footer { flex-wrap:wrap; align-items:center; }
+.guide-enquiry { min-height:44px; margin:0 0 24px; }
+.support-note { margin-top:20px; }
+@media(max-width:720px) { footer { align-items:flex-start; } .footer-links a { min-height:44px; display:flex; align-items:center; } }

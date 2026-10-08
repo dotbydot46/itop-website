@@ -26,7 +26,7 @@ The build creates `dist/client`, `dist/server/index.js` and `dist/.openai/hostin
 ## Features
 
 - Responsive homepage and mobile navigation.
-- Dedicated Repairs, Accessories, Wholesale and Buy/Sell pages, with direct GitHub Pages addresses.
+- Dedicated Repairs, Accessories, Wholesale, Buy/Sell, Contact and Warranty/Aftercare pages, with direct GitHub Pages addresses.
 - Six repair categories, phone/tablet/laptop/gadget enquiries and expandable FAQs.
 - Wholesale product-list enquiries and separate buy/sell intent and condition fields.
 - A service chooser under Ask iTop and weekly opening hours supplied by the user.
@@ -53,3 +53,5 @@ Contact details were carried over from the old iTop website. Google listing veri
 ## Next phase
 
 Preserve the approved design and complete design/functionality improvements before connecting a domain, as requested. Confirm remaining business claims and policy wording, complete real-device and screen-reader checks, and replace illustrative photos when genuine ones are supplied.
+
+Legacy content integration: Contact and Warranty/Aftercare structure, fault-specific quote guidance and business/setup enquiries were adapted from the older iTop site. Demo price tables, fixed warranty examples and old hours were excluded. The legacy site has not been changed or removed.
