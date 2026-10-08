@@ -39,3 +39,19 @@ test('repair messages include the active fault answer and reject answers from an
   assert.match(repairMessage({...data,Issue:'Charging fault',Fault:'Charges only at an angle'}),/Fault detail: Charges only at an angle/);
   assert.doesNotMatch(repairMessage({...data,Issue:'Not sure'}),/Fault detail:/);
 });
+
+test('business and trade requests keep their purpose and exclude unrelated fields', async () => {
+  const {businessMessage,tradeApplicationMessage}=await import('../src/businessMessages.mjs');
+  const data={Service:'Device repairs', Business:' Example business ', Name:' Test contact ', Email:'test@example.com', Quantity:'8', Needed:'Next week', Details:'Four phones and four tablets', Type:'Repair business', Area:'SE6', Frequency:'Monthly'};
+  const business=businessMessage(data);
+  assert.match(business,/Service: Device repairs/);
+  assert.match(business,/Quantity: 8/);
+  assert.match(business,/Details: Four phones and four tablets/);
+  assert.doesNotMatch(business,/Type:|Area:|Frequency:/);
+  const trade=tradeApplicationMessage(data);
+  assert.match(trade,/Business: Example business/);
+  assert.match(trade,/Type: Repair business/);
+  assert.match(trade,/Frequency: Monthly/);
+  assert.doesNotMatch(trade,/Service:|Quantity:|Needed:/);
+  assert.doesNotMatch(tradeApplicationMessage({Business:' Example ',Email:'   '}),/Email:/);
+});

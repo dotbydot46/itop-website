@@ -316,3 +316,34 @@ footer { flex-wrap:wrap; align-items:center; }
 .repair-visit-checklist .service-notes li { margin-bottom:18px; }
 .repair-visit-checklist strong { color:var(--ink); }
 .repair-visit-checklist .text-button { min-height:44px; }
+
+/* Business enquiries extend the shared iTop language. */
+.business-services { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:12px 3.85% 56px; }
+.business-services article { display:flex; flex-direction:column; min-width:0; background:#f3f5f6; padding:32px; }
+.business-services article:nth-child(2) { background:#eaf8ff; }
+.business-card-top { display:flex; align-items:center; justify-content:space-between; color:#007eb1; }
+.business-services h2 { font-size:28px; letter-spacing:-.04em; line-height:1.15; margin:26px 0 16px; }
+.business-services p { color:var(--muted); font-size:16px; line-height:1.65; margin-bottom:24px; }
+.business-services .text-button { align-self:flex-start; margin-top:auto; min-height:44px; }
+.business-enquiry { background:#f3f5f6; align-items:start; scroll-margin-top:24px; }
+.business-form { min-width:0; background:#fff; padding:32px; }
+.business-form .flow-title { margin-bottom:26px; }
+.business-next { margin-top:32px; font-size:16px; line-height:1.65; }
+.business-next ol { padding-left:22px; color:var(--muted); }
+.business-next li { padding:5px 0; }
+.business-hero .secondary-copy { font-size:16px; margin-top:22px; }
+.business-hero .secondary-copy a { text-decoration:underline; text-underline-offset:4px; }
+.business-choice { display:flex; flex-direction:column; gap:8px; text-align:left; padding:18px; background:#eaf8ff; border:1px solid #c7e5f2; }
+.business-choice span { font-size:14px; line-height:1.5; color:var(--muted); }
+.business-choice:hover { border-color:#007eb1; }
+@media(min-width:1550px) { .business-services { padding-left:max(3.85%,calc((100vw - 1450px)/2)); padding-right:max(3.85%,calc((100vw - 1450px)/2)); } }
+@media(min-width:901px) and (max-width:1100px) {
+ .header { height:76px; padding:0 22px; gap:22px; position:relative; }
+ .ask-button { margin-left:auto; border:0; padding:0; width:44px; height:44px; justify-content:center; }
+ .ask-button span { display:none; }
+ .menu-button { display:flex; width:44px; height:44px; }
+ .navigation { display:none; }
+ .navigation.is-open { display:flex; position:absolute; top:76px; left:0; right:0; z-index:5; background:white; padding:16px 24px; border:0; border-bottom:1px solid #c8cbd0; gap:0; flex-direction:column; align-items:stretch; }
+ .navigation a { font-size:16px; }
+}
+@media(max-width:720px) { .business-services { grid-template-columns:1fr; padding:0 24px 36px; } .business-services article { padding:26px; } .business-form { padding:24px; } .business-enquiry { gap:30px; } }
