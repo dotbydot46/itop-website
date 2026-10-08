@@ -1,5 +1,7 @@
 # Prototype Instructions
 
+The user approved keeping the existing AI product imagery for now and likes the current design. Preserve it. Source is stored in `dotbydot46/itop-website`; Sites publication remains a separate operation, not an automatic consequence of a GitHub update. Consult `docs/business-info.md` before adding business claims.
+
 ## iTop redesign decisions
 
 The user selected the third displayed concept, Modern Product Counter. Preserve its white/charcoal/cyan palette, oversized left headline, square three-product shelf and dark repair strip. This is a separate portfolio and learning project: do not modify the existing hosted iTop site. Use React/TypeScript and concise learning notes. Product photos are generic AI concept imagery, not verified store stock; do not use MH Connect's photos or fabricate iTop premises, ratings, prices or warranty periods. Genuine iTop photographs should replace concept imagery when supplied.
