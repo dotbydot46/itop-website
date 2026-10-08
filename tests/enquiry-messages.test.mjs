@@ -88,7 +88,9 @@ test('case import keeps style-specific selling prices and ambiguous model labels
   assert.equal(find('S25/S24 blurred').cataloguePricePence,159);
   assert.ok(filterWholesaleProducts('16E/se4','Cases').length===1);
   const item=find('12promax/13promax blurred');
-  assert.match(catalogueQuoteItems([{id:item.id,quantity:'2',unit:'Items'}])[0].variant,/12promax\/13promax/);
+  const quote=catalogueQuoteItems([{id:item.id,quantity:'2',unit:'Items'}])[0];
+  assert.equal(quote.product,'12promax/13promax blurred');
+  assert.equal(quote.variant,'');
   assert.ok(!wholesaleProducts.some(p=>p.detail==='Supplier label: 7P/8P'));
 });
 
@@ -105,3 +107,4 @@ test('remaining case import preserves price exceptions and network variants',asy
   assert.equal(find('A51 4G?5G?').detail,'Supplier label: A51 4G?5G?');
   assert.equal(filterWholesaleProducts('S26','Cases').filter(p=>p.name.startsWith('Shockproof Case')).length,3);
 });
+

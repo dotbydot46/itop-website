@@ -3,6 +3,7 @@
  * The owner confirmed screenshot amounts are iTop selling prices on 8 October 2026. VAT and item/pack basis require confirmation. No warranties, pack sizes or stock counts are inferred.
  * @type {{id:string,category:string,collection:string,name:string,code:string,detail:string,cataloguePricePence:number}[]}
  */
+import { wholesaleProductName, wholesaleProductDetail } from './wholesalePresentation.mjs';
 export const wholesaleProducts = [
   {
     "id": "wa-01-1",
@@ -2990,6 +2991,7 @@ export function catalogueQuoteItems(selection) {
     const quantity=Number(row.quantity);
     if(!product || ids.has(row.id) || !row.quantity.trim() || !Number.isInteger(quantity) || quantity<1 || quantity>10000 || !['Items','Packs'].includes(row.unit)) throw new Error('Check the selected products and quantities.');
     ids.add(row.id);
-    return {product:product.name,sku:product.code,variant:product.detail,quantity:String(quantity),unit:row.unit};
+    return {product:wholesaleProductName(product),sku:product.code,variant:wholesaleProductDetail(product),quantity:String(quantity),unit:row.unit};
   });
 }
+

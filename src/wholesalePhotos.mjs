@@ -6,6 +6,7 @@ const stylePhotos = {
   Shockproof: 'shockproof.jpeg',
   Bracket: 'bracket.jpeg',
   Blurred: 'blurred.jpeg',
+  Shiny: 'shiny.jpeg',
 };
 
 /** @param {{name:string}} product */
