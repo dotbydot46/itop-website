@@ -212,3 +212,8 @@ footer { flex-wrap:wrap; align-items:center; }
   .flow-actions .button { width:100%; }
   .dialog-actions { align-items:flex-start; }
 }
+
+.wholesale-actions { display:flex; align-items:center; flex-wrap:wrap; gap:16px; }
+.wholesale-actions .text-button { min-height:44px; }
+.catalogue-inline-link { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:720px) { .wholesale-actions { align-items:flex-start; flex-direction:column; } }

@@ -62,3 +62,7 @@ Read source from `dotbydot46/iTop` on 8 October 2026, including repairs, screen/
 The legacy `CONTENT_TO_CONFIRM.txt` explicitly leaves warranty durations, real reviews, stock and trade pricing unconfirmed. Its service tables include £XX demo prices and 6/12/18-month examples. Those were not imported. The legacy 10:00–21:00 hours were not imported either; the user's weekly hours are retained. There are no guaranteed unlocks, data recovery or same-day promises. Setup enquiries refer to ownership, eligibility and official account recovery where relevant.
 
 The old website remains unchanged. Consolidation and redirects can be considered after the React website is final.
+
+## WhatsApp wholesale catalogue
+
+The user supplied https://wa.me/c/447417465401 on 8 October 2026 and explicitly confirmed it is wholesale. The website links directly to this catalogue and uses +44 7417 465401 for wholesale quote drafts. The existing +44 7760 616466 remains the general retail/repair contact. Web retrieval of the catalogue was unavailable; no catalogue products, prices, stock or terms were imported or independently verified. WhatsApp remains the maintained catalogue source.

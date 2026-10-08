@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { wholesaleCatalogueUrl, wholesaleWhatsAppNumber } from './wholesaleContact';
 import { MessageReview } from './MessageReview';
 import { quoteErrors, wholesaleMessage } from './enquiryMessages.mjs';
 
@@ -28,8 +29,8 @@ export function WholesaleQuoteBuilder() {
   }
   return <div className="guided-flow">
     <h3 ref={heading} tabIndex={-1} className="flow-title">{review ? 'Review your product list.' : 'Build your quote request.'}</h3>
-    {review ? <MessageReview message={wholesaleMessage(rows, details)} onEdit={() => setReview(false)} editLabel="Edit product list" /> : <form onSubmit={prepare}>
-      <p className="dialog-intro">Add products, variants and quantities. iTop will confirm stock and prices before an order is agreed.</p>
+    {review ? <MessageReview whatsappNumber={wholesaleWhatsAppNumber} message={wholesaleMessage(rows, details)} onEdit={() => setReview(false)} editLabel="Edit product list" /> : <form onSubmit={prepare}>
+      <p className="dialog-intro">Choose products from the <a className="catalogue-inline-link" href={wholesaleCatalogueUrl} target="_blank" rel="noopener noreferrer">WhatsApp wholesale catalogue</a>, then add variants and quantities below. iTop will confirm stock and your quote.</p>
       <div className="quote-items">{rows.map((row, index) => <fieldset key={row.id} className="quote-item"><legend>Item {index + 1}</legend>
         <label>Product (required)<input id={'quote-product-' + row.id} value={row.product} onChange={e => update(row.id, 'product', e.target.value)} required pattern={'.*\\S.*'} title="Enter a product description" maxLength={100} placeholder="e.g. clear phone case" /></label>
         <div className="form-row"><label>Model, colour or variant<input value={row.variant} onChange={e => update(row.id, 'variant', e.target.value)} maxLength={100} placeholder="e.g. iPhone 14, clear" /></label><label>Product code (optional)<input value={row.sku} onChange={e => update(row.id, 'sku', e.target.value)} maxLength={40} placeholder="If you have a reference" /></label></div>
