@@ -217,3 +217,21 @@ footer { flex-wrap:wrap; align-items:center; }
 .wholesale-actions .text-button { min-height:44px; }
 .catalogue-inline-link { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
 @media(max-width:720px) { .wholesale-actions { align-items:flex-start; flex-direction:column; } }
+
+.model-hint { font-size:14px; line-height:1.6; color:var(--muted); margin:-8px 0 18px; }
+.model-help { border-top:1px solid #d7dade; border-bottom:1px solid #d7dade; margin:18px 0; font-size:14px; line-height:1.6; }
+.model-help summary { cursor:pointer; padding:14px 0; font-weight:600; }
+.model-help ul { padding-left:20px; margin:0 0 12px; }
+.model-help p { margin-bottom:16px; color:var(--muted); }
+.draft-tools { background:#f4f5f6; padding:16px; margin:20px 0; }
+.draft-actions { display:flex; flex-wrap:wrap; gap:8px 18px; }
+.draft-actions button { min-height:44px; }
+.draft-tools p { font-size:14px; line-height:1.6; color:var(--muted); margin-top:10px; }
+.draft-tools [role="status"]:empty { display:none; }
+.mobile-repair-actions { display:none; }
+@media(max-width:720px) {
+  .mobile-repair-actions { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:10px; position:fixed; left:0; right:0; bottom:0; z-index:6; background:white; border-top:1px solid #c4c9ce; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); }
+  .mobile-repair-actions .button { min-height:48px; padding:12px 8px; font-size:14px; line-height:1.4; text-align:center; white-space:normal; }
+  .mobile-repair-actions .button-outline { border:1px solid var(--ink); }
+  .repairs-footer { padding-bottom:calc(124px + env(safe-area-inset-bottom)); }
+}

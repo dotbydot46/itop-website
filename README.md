@@ -29,8 +29,10 @@ The build creates `dist/client`, `dist/server/index.js` and `dist/.openai/hostin
 - Responsive homepage and mobile navigation.
 - Dedicated Repairs, Accessories, Wholesale, Buy/Sell, Contact and Warranty/Aftercare pages, with direct GitHub Pages addresses.
 - Six repair categories, phone/tablet/laptop/gadget enquiries and expandable FAQs.
-- Guided Device → Fault → Review repair enquiries, with an unknown-model option.
+- Guided Device → Fault → Review repair enquiries, searchable model suggestions, model help and an unknown-model option.
+- Mobile repair action bar, hidden while a menu or enquiry dialog is open.
 - Wholesale quote builder with up to 12 products, variants, references and item/pack quantities.
+- Explicit save/load/delete for wholesale product lists on the visitor’s device, expiring after 30 days. No contact details or notes are stored.
 - Separate buy/sell intent and condition fields.
 - A service chooser under Ask iTop and weekly opening hours supplied by the user.
 - Repair, accessory, wholesale and buy/sell enquiry dialogs.
@@ -39,7 +41,7 @@ The build creates `dist/client`, `dist/server/index.js` and `dist/.openai/hostin
 - Native dialog keyboard behaviour and reduced-motion support.
 - Locally served fonts and original iTop logo.
 
-There is no checkout, booking confirmation, database, stock feed or message sending from the app. The visitor decides whether to send the prepared WhatsApp message. Never enter passwords or device passcodes.
+There is no checkout, booking confirmation, database, stock feed or message sending from the app. Product-list saving uses local browser storage only and can be unavailable in restricted browsers. The visitor decides whether to send the prepared WhatsApp message. Never enter passwords or device passcodes.
 
 ## Editing and hosting
 

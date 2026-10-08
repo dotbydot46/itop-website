@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { wholesaleCatalogueUrl, wholesaleWhatsAppNumber } from './wholesaleContact';
+import { wholesaleDraftKey, encodeWholesaleDraft, decodeWholesaleDraft } from './wholesaleDraft.mjs';
 import { MessageReview } from './MessageReview';
 import { quoteErrors, wholesaleMessage } from './enquiryMessages.mjs';
 
@@ -11,7 +12,34 @@ export function WholesaleQuoteBuilder() {
   const [details, setDetails] = useState<Record<string,string>>({ Name: '', Business: '', Fulfilment: 'Collection', Location: '', Needed: '', Notes: '' });
   const [review, setReview] = useState(false);
   const [error, setError] = useState('');
+  const [savedList, setSavedList] = useState<ReturnType<typeof decodeWholesaleDraft>>(null);
+  const [storageStatus, setStorageStatus] = useState('');
   const nextId = useRef(2);
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(wholesaleDraftKey);
+      const saved = decodeWholesaleDraft(raw);
+      setSavedList(saved);
+      if (raw && !saved) { localStorage.removeItem(wholesaleDraftKey); setStorageStatus('An expired or unreadable saved list was removed.'); }
+    } catch { setStorageStatus('Saving is unavailable in this browser. You can still prepare a quote.'); }
+  }, []);
+  function saveList() {
+    try {
+      const raw = encodeWholesaleDraft(rows);
+      localStorage.setItem(wholesaleDraftKey, raw);
+      setSavedList(decodeWholesaleDraft(raw)); setStorageStatus('Product list saved on this device. Save again after making changes.');
+    } catch { setStorageStatus('Could not save here. Your current list is still available to review or copy.'); }
+  }
+  function loadList() {
+    if (!savedList) return;
+    setRows(savedList.rows); nextId.current = savedList.rows.length + 1;
+    setError(''); setStorageStatus('Saved product list loaded.'); setReview(false);
+    requestAnimationFrame(() => document.getElementById('quote-product-1')?.focus());
+  }
+  function clearSavedList() {
+    try { localStorage.removeItem(wholesaleDraftKey); setSavedList(null); setStorageStatus('Saved list deleted from this device. Your current form is unchanged.'); }
+    catch { setStorageStatus('Could not delete the saved list. Check your browser storage settings.'); }
+  }
   const heading = useRef<HTMLHeadingElement>(null);
   useEffect(() => { heading.current?.focus(); }, [review]);
   const set = (key: string, value: string) => setDetails(previous => ({ ...previous, [key]: value }));
@@ -31,6 +59,7 @@ export function WholesaleQuoteBuilder() {
     <h3 ref={heading} tabIndex={-1} className="flow-title">{review ? 'Review your product list.' : 'Build your quote request.'}</h3>
     {review ? <MessageReview whatsappNumber={wholesaleWhatsAppNumber} message={wholesaleMessage(rows, details)} onEdit={() => setReview(false)} editLabel="Edit product list" /> : <form onSubmit={prepare}>
       <p className="dialog-intro">Choose products from the <a className="catalogue-inline-link" href={wholesaleCatalogueUrl} target="_blank" rel="noopener noreferrer">WhatsApp wholesale catalogue</a>, then add variants and quantities below. iTop will confirm stock and your quote.</p>
+      <div className="draft-tools"><div className="draft-actions"><button className="text-button" type="button" onClick={saveList}>Save product list</button>{savedList && <><button className="text-button" type="button" onClick={loadList}>Load saved list</button><button className="text-button" type="button" onClick={clearSavedList}>Delete saved list</button></>}</div><p>Optional: save products and quantities on this device for up to 30 days. Contact details and notes are not saved. Avoid saving on a shared device.</p><p role="status">{storageStatus}</p></div>
       <div className="quote-items">{rows.map((row, index) => <fieldset key={row.id} className="quote-item"><legend>Item {index + 1}</legend>
         <label>Product (required)<input id={'quote-product-' + row.id} value={row.product} onChange={e => update(row.id, 'product', e.target.value)} required pattern={'.*\\S.*'} title="Enter a product description" maxLength={100} placeholder="e.g. clear phone case" /></label>
         <div className="form-row"><label>Model, colour or variant<input value={row.variant} onChange={e => update(row.id, 'variant', e.target.value)} maxLength={100} placeholder="e.g. iPhone 14, clear" /></label><label>Product code (optional)<input value={row.sku} onChange={e => update(row.id, 'sku', e.target.value)} maxLength={40} placeholder="If you have a reference" /></label></div>
@@ -46,6 +75,6 @@ export function WholesaleQuoteBuilder() {
       <label>Notes (optional)<textarea value={details.Notes} onChange={e => set('Notes', e.target.value)} rows={3} maxLength={600} placeholder="Pack sizes, alternative products or other requirements" /></label>
       <p role="alert">{error}</p><button className="button button-dark form-submit" type="submit">Review quote request</button>
     </form>}
-    <p className="privacy-note">No payment is taken and stock is not reserved. Pack sizes, prices, delivery charges and availability are confirmed by iTop. Your list stays in this page until you open WhatsApp.</p>
+    <p className="privacy-note">No payment is taken and stock is not reserved. Pack sizes, prices, delivery charges and availability are confirmed by iTop. Drafts are kept in this page unless you choose to save the product list on this device.</p>
   </div>;
 }

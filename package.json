@@ -10,7 +10,7 @@
     "test:pages": "node --test tests/pages-build.test.mjs",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
-    "test:enquiries": "node --test tests/enquiry-messages.test.mjs"
+    "test:enquiries": "node --test tests/enquiry-messages.test.mjs tests/wholesale-draft.test.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

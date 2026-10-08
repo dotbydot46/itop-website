@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { repairModels } from './repairModels';
 import { MessageReview } from './MessageReview';
 import { repairMessage } from './enquiryMessages.mjs';
 
@@ -11,13 +12,18 @@ export function RepairEnquiryFlow({ issue }: { issue?: string }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => { titleRef.current?.focus(); }, [step]);
   const set = (key: string, value: string) => setData(previous => ({ ...previous, [key]: value }));
+  const models = repairModels(data.Device, data.Brand);
+  const changeDevice = (key: 'Device' | 'Brand', value: string) => setData(previous => ({ ...previous, [key]: value, Model: '', UnknownModel: '' }));
   function next(event: FormEvent<HTMLFormElement>) { event.preventDefault(); if (step === 2 && data.Issue === 'Not sure' && !data.Symptoms.trim()) { const field = event.currentTarget.querySelector('textarea'); field?.setCustomValidity('Describe what happens to your device.'); field?.reportValidity(); return; } setStep(step + 1); }
   return <div className="guided-flow">
     <ol className="flow-steps" aria-label="Repair enquiry steps">{['Device', 'Fault', 'Review'].map((label, i) => <li key={label} aria-current={step === i + 1 ? 'step' : undefined}><span>{i + 1}</span>{label}</li>)}</ol>
     <h3 ref={titleRef} tabIndex={-1} className="flow-title">{step === 1 ? 'Which device needs help?' : step === 2 ? 'What needs fixing?' : 'Review your repair enquiry.'}</h3>
     {step === 1 ? <form onSubmit={next}>
-      <div className="form-row"><label>Device type<select value={data.Device} onChange={e => set('Device', e.target.value)}><option>Phone</option><option>Tablet</option><option>Laptop</option><option>Other gadget</option></select></label><label>Brand<select value={data.Brand} onChange={e => set('Brand', e.target.value)} required><option value="">Choose a brand</option><option>Apple</option><option>Samsung</option><option>Google</option><option>Dell</option><option>HP</option><option>Lenovo</option><option>Other / not sure</option></select></label></div>
-      <label>Device model<input value={data.Model} onChange={e => set('Model', e.target.value)} placeholder={data.Device === 'Laptop' ? 'e.g. ThinkPad T14' : 'e.g. iPhone 14 or Galaxy A54'} disabled={data.UnknownModel === 'yes'} required={data.UnknownModel !== 'yes'} pattern={'.*\\S.*'} title="Enter a model, or choose not sure below" maxLength={100} /></label>
+      <div className="form-row"><label>Device type<select value={data.Device} onChange={e => changeDevice('Device', e.target.value)}><option>Phone</option><option>Tablet</option><option>Laptop</option><option>Other gadget</option></select></label><label>Brand<select value={data.Brand} onChange={e => changeDevice('Brand', e.target.value)} required><option value="">Choose a brand</option><option>Apple</option><option>Samsung</option><option>Google</option><option>Dell</option><option>HP</option><option>Lenovo</option><option>Other / not sure</option></select></label></div>
+      <label>Device model<input list={models.length ? 'repair-model-options' : undefined} aria-describedby="model-hint" autoComplete="off" value={data.Model} onChange={e => set('Model', e.target.value)} placeholder={data.Device === 'Laptop' ? 'e.g. ThinkPad T14' : 'e.g. iPhone 14 or Galaxy A54'} disabled={data.UnknownModel === 'yes'} required={data.UnknownModel !== 'yes'} pattern={'.*\\S.*'} title="Enter a model, or choose not sure below" maxLength={100} /></label>
+      <datalist id="repair-model-options">{models.map(model => <option key={model} value={model} />)}</datalist>
+      <p id="model-hint" className="model-hint">{models.length ? 'Start typing to find a suggestion, or enter another model.' : 'Enter the model name, or choose “not sure” below.'} Support and parts are confirmed by iTop.</p>
+      <details className="model-help"><summary>Help me find my model</summary><ul><li><strong>iPhone / iPad:</strong> open Settings → General → About.</li><li><strong>Samsung phone:</strong> open Settings → About phone.</li><li><strong>Other devices:</strong> check the model label, original box or receipt.</li></ul><p>If the device will not turn on, choose “I’m not sure of the model”. You do not need to share a serial number or IMEI.</p></details>
       <label className="checkbox-label"><input type="checkbox" checked={data.UnknownModel === 'yes'} onChange={e => set('UnknownModel', e.target.checked ? 'yes' : '')} />I’m not sure of the model</label>
       <button className="button button-dark form-submit" type="submit">Next: describe the fault</button>
     </form> : step === 2 ? <form onSubmit={next}>
