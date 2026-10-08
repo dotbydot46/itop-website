@@ -308,3 +308,5 @@ footer { flex-wrap:wrap; align-items:center; }
   .repair-breadcrumb { padding:16px 24px 0; gap:8px; }
   .model-next-step { padding:32px 24px 40px; }
 }
+
+.model-series-filter { width:min(100%,360px); margin:24px 0 0; }
