@@ -28,6 +28,7 @@ jobs:
       - run: npm run build
       - run: npm run test:sites
       - run: npm run build:pages
+      - run: npm run test:pages
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

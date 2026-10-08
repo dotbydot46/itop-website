@@ -55,3 +55,11 @@ npm run test:sites
 Describe the problem (iTop resembled another project), reference and chosen design, component architecture, accessibility choices, responsive behaviour, and testing. Present this as a frontend prototype, not a completed ecommerce platform or booking backend.
 
 Photos are generic AI concept imagery, not documentary shop photos or verified live inventory. Opening hours and service details need business-owner confirmation before public launch. There is no analytics, account system, online payment, persisted booking or live stock feed.
+# Service pages and enquiries
+
+`ServicePages.tsx` adds Accessories, Wholesale and Buy/Sell using the same design classes as the homepage. `EnquiryDialog.tsx` shares the draft-preview flow while showing fields appropriate to each service. A selling enquiry asks for a model and condition; a trade enquiry asks for a product list.
+
+`sitePaths.ts` adapts internal URLs to GitHub's `/itop-website/` prefix or a root-hosted preview. The Pages build writes an HTML entry for each service so direct visits and refreshes work. `test:pages` checks that the deployment contains compiled JavaScript and valid asset files, rather than publishing React source.
+
+Try changing an accessory description, then compare it on desktop and mobile. For a new service page, add both the app route and the Pages output route.
+

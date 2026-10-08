@@ -26,7 +26,10 @@ The build creates `dist/client`, `dist/server/index.js` and `dist/.openai/hostin
 ## Features
 
 - Responsive homepage and mobile navigation.
-- Dedicated `/repairs` page with six service enquiry categories, repair steps and expandable FAQs.
+- Dedicated Repairs, Accessories, Wholesale and Buy/Sell pages, with direct GitHub Pages addresses.
+- Six repair categories, phone/tablet/laptop/gadget enquiries and expandable FAQs.
+- Wholesale product-list enquiries and separate buy/sell intent and condition fields.
+- A service chooser under Ask iTop and weekly opening hours supplied by the user.
 - Repair, accessory, wholesale and buy/sell enquiry dialogs.
 - Local draft preview and editable details before opening WhatsApp.
 - Tap-to-call, email, directions and Google-profile links.
@@ -39,7 +42,7 @@ There is no checkout, booking confirmation, database, stock feed or message send
 
 `src/App.tsx` holds content and interactions; `src/styles.css` holds the design; `public/assets` holds images. Read [LEARNING.md](LEARNING.md) for short explanations and exercises, and [business-info.md](docs/business-info.md) for research and confirmation gaps.
 
-GitHub stores the source and change history. Sites hosts the preview. A GitHub commit does **not** automatically update Sites: publish the verified build separately. Do not change the hosting project identity when updating the existing preview. GitHub Pages publishes the compiled website automatically after pushes to `main` using `.github/workflows/pages.yml`. Its separate `npm run build:pages` command builds for `/itop-website/` and creates a direct Repairs page. Shared links and image paths adapt to each hosting target. The public website is https://dotbydot46.github.io/itop-website/.
+GitHub stores the source and change history. Sites hosts the preview. A GitHub commit does **not** automatically update Sites: publish the verified build separately. Do not change the hosting project identity when updating the existing preview. GitHub Pages publishes the compiled website automatically after pushes to `main` using `.github/workflows/pages.yml`. Its separate `npm run build:pages` command builds for `/itop-website/` and creates direct entries for every service page. Shared links and image paths adapt to each hosting target. The public website is https://dotbydot46.github.io/itop-website/.
 
 ## Images and business claims
 
@@ -49,4 +52,4 @@ Contact details were carried over from the old iTop website. Google listing veri
 
 ## Next phase
 
-Preserve the approved homepage and Repairs page. Add dedicated Accessories, Wholesale and Buy/Sell pages after agreeing their scope. Confirm business details and policy wording before public launch; then complete remaining accessibility and real-device checks and connect the final domain.
+Preserve the approved design and complete design/functionality improvements before connecting a domain, as requested. Confirm remaining business claims and policy wording, complete real-device and screen-reader checks, and replace illustrative photos when genuine ones are supplied.

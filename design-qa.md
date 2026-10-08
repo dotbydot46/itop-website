@@ -104,3 +104,12 @@ final result: passed
 - [x] Mobile/tablet layout and core navigation checked.
 - [x] Type checking/build/runtime tests passed.
 - [x] Existing live iTop site untouched.
+
+
+## Service expansion — 8 October 2026
+
+Preserved the approved homepage design, palette, typography and illustrative product photos. Added Accessories, Wholesale and Buy/Sell pages with shared navigation and enquiry flow. The user wants design/functionality work before a domain change.
+
+Verified in the browser: accessory category and device details in the draft; edit/preview retains details; sell intent and condition; required model/details validation; whitespace-only wholesale list rejection; trade draft; laptop repair draft and battery issue preselection; Escape closes and returns focus to the initiating button; mobile navigation and Ask iTop service chooser. No enquiries were sent.
+
+All three new pages were checked in 390px/834px iframe viewports (375px/819px content widths), with no horizontal overflow. Desktop Accessories was visually inspected against the approved design system. Strict TypeScript, both hosting builds, five Worker hosting checks and the Pages compiled-artifact check passed. Real-device, screen-reader and 200% zoom testing remain pending.

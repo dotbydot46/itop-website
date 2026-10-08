@@ -2,6 +2,14 @@
 
 Research date: 8 October 2026. Distinguish a claim on the old website from an independently verified business fact.
 
+## User-supplied update, 8 October 2026
+
+The user supplied the preferred public name **iTop Phones & Repair Center**, the existing address and phone, mobile/laptop/gadget repair services, and weekly hours **Monday–Saturday 08:00–21:30; Sunday 10:00–21:30**. These hours replace the old website hours in the current implementation. They are user-supplied, not independently Google-verified. Retain the call-first note for bank holidays and temporary changes.
+
+The user also supplied a 4.9/5 rating from 95 reviews, a Level 3 technician claim and nearby free parking. The Google searchviewer link could not be read through search. Those claims have not been added as verified facts or a rating badge. No parking guarantee is displayed.
+
+The Deliveroo listing was opened through web search on this date and identifies iTop Phones & Repair Center in Catford with accessory categories including protectors, cables, charging adapters, power banks and audio. Accessories links to the listing with stock, area and fee qualifications. Delivery listing opening times are not treated as the shop's weekly hours. Source: https://deliveroo.co.uk/menu/london/catford/itop-phones-and-repair-center.
+
 ## Sources inspected
 
 - [Old homepage](https://dotbydot46.github.io/iTop/)
@@ -20,7 +28,7 @@ Research date: 8 October 2026. Distinguish a claim on the old website from an in
 | Address | 160 Rushey Green, London SE6 4HQ | Consistent across inspected old pages; owner confirmation pending |
 | Phone / WhatsApp | 07760 616 466; +447760616466 | Listed on old site; not independently verified |
 | Email | info.itop@gmail.com | Listed on old site; not independently verified |
-| Opening hours | 10:00–21:00 | Old site does not establish separate opening days; new page currently says daily, which requires confirmation |
+| Opening hours | 10:00–21:00 | Old site does not establish separate opening days; superseded by the user-supplied weekly hours above |
 
 Keep the current caution to call about holiday or temporary changes. Do not label these details Google-verified.
 

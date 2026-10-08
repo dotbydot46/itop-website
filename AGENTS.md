@@ -1,10 +1,12 @@
 # Prototype Instructions
 
+The user prioritises design and functionality before connecting a domain. On 8 October 2026 they supplied the preferred name iTop Phones & Repair Center and hours Monday–Saturday 08:00–21:30, Sunday 10:00–21:30. These supersede the old hours; document them as user-supplied, not independently Google-verified. Dedicated Accessories, Wholesale and Buy/Sell pages and device-specific enquiries are authorised. Preserve the existing visual direction and illustrative photos.
+
 The user approved keeping the existing AI product imagery for now and likes the current design. Preserve it. Source is stored in `dotbydot46/itop-website`; Sites publication remains a separate operation, not an automatic consequence of a GitHub update. Consult `docs/business-info.md` before adding business claims.
 
 ## iTop redesign decisions
 
-The approved `/repairs` extension uses the same header, typography, palette, button styles and enquiry dialog. Keep its six issue choices, conditional warranty/same-day wording and native FAQ disclosure controls. Existing homepage anchors remain for Accessories, Trade and Visit; only Repairs has a dedicated route at present.
+The service pages `/repairs/`, `/accessories/`, `/wholesale/` and `/buy-sell/` share the header, typography, palette, button styles and enquiry dialog. Keep the six repair issue choices, conditional warranty/same-day wording and native FAQ disclosure controls. Homepage anchors remain usable; navigation links to dedicated service pages and Visit links to the homepage address and hours.
 
 The user selected the third displayed concept, Modern Product Counter. Preserve its white/charcoal/cyan palette, oversized left headline, square three-product shelf and dark repair strip. This is a separate portfolio and learning project: do not modify the existing hosted iTop site. Use React/TypeScript and concise learning notes. Product photos are generic AI concept imagery, not verified store stock; do not use MH Connect's photos or fabricate iTop premises, ratings, prices or warranty periods. Genuine iTop photographs should replace concept imagery when supplied.
 

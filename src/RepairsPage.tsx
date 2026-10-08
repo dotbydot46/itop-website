@@ -14,7 +14,7 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
   return <>
     <section className="hero repairs-hero" aria-labelledby="repairs-title">
       <div><p className="eyebrow">ITOP / REPAIRS / CATFORD</p><h1 id="repairs-title">Back to<br />working<span>.</span></h1></div>
-      <div className="hero-copy"><p>iPhone and Samsung repair enquiries.<br className="desktop-break" /> Tell us the model and the fault.<br className="desktop-break" /> We’ll confirm the options before you visit.</p><button className="button button-dark" onClick={() => onEnquire()}>Get a repair quote</button><a className="repair-call" href="tel:+447760616466">Or call 07760 616 466</a></div>
+      <div className="hero-copy"><p>Phone, laptop and gadget repair enquiries.<br className="desktop-break" /> Tell us the model and the fault.<br className="desktop-break" /> We’ll confirm the options before you visit.</p><button className="button button-dark" onClick={() => onEnquire()}>Get a repair quote</button><a className="repair-call" href="tel:+447760616466">Or call 07760 616 466</a></div>
     </section>
     <section className="repair-services" aria-labelledby="services-title">
       <div className="section-heading"><h2 id="services-title">What needs fixing?</h2><p>Choose a starting point. Parts and support depend on your model.</p></div>
