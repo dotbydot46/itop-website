@@ -58,8 +58,8 @@ test('business and trade requests keep their purpose and exclude unrelated field
 
 test('catalogue selection preserves item identity, code, variants and quantities', async()=>{
   const {wholesaleProducts,filterWholesaleProducts,catalogueQuoteItems}=await import('../src/wholesaleCatalogue.mjs');
-  assert.equal(wholesaleProducts.length,205);
-  assert.equal(new Set(wholesaleProducts.map(p=>p.id)).size,205);
+  assert.equal(wholesaleProducts.length,330);
+  assert.equal(new Set(wholesaleProducts.map(p=>p.id)).size,330);
   for(const p of wholesaleProducts) assert.ok(Number.isInteger(p.cataloguePricePence)&&p.cataloguePricePence>0);
   assert.equal(filterWholesaleProducts('sc-x82','Cables & adapters').length,1);
   assert.ok(filterWholesaleProducts('17 pro','Cases').some(item=>item.name==='Blurred Case — 17 / 18 Pro Max'));
@@ -90,4 +90,18 @@ test('case import keeps style-specific selling prices and ambiguous model labels
   const item=find('12promax/13promax blurred');
   assert.match(catalogueQuoteItems([{id:item.id,quantity:'2',unit:'Items'}])[0].variant,/12promax\/13promax/);
   assert.ok(!wholesaleProducts.some(p=>p.detail==='Supplier label: 7P/8P'));
+});
+
+test('remaining case import preserves price exceptions and network variants',async()=>{
+  const {wholesaleProducts,filterWholesaleProducts}=await import('../src/wholesaleCatalogue.mjs');
+  const find=(label)=>wholesaleProducts.find(p=>p.detail==='Supplier label: '+label);
+  assert.equal(find('A14 shockproof').cataloguePricePence,128);
+  assert.equal(find('11 Promax colorful').cataloguePricePence,199);
+  assert.equal(find('16Plus frame').cataloguePricePence,165);
+  assert.equal(find('17 bracket').cataloguePricePence,199);
+  assert.equal(find('A32 4G thin').cataloguePricePence,129);
+  assert.equal(find('A32 5G thin').cataloguePricePence,129);
+  assert.notEqual(find('A32 4G thin').id,find('A32 5G thin').id);
+  assert.equal(find('A51 4G?5G?').detail,'Supplier label: A51 4G?5G?');
+  assert.equal(filterWholesaleProducts('S26','Cases').filter(p=>p.name.startsWith('Shockproof Case')).length,3);
 });

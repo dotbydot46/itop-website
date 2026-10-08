@@ -28,3 +28,13 @@ Thin cases are £1.29, colourful £1.79, blurred £1.59, packaged £0.99. Shiny 
 The accompanying case import manifest retains original supplier labels and owner-confirmed prices. This confirmation resolves buying versus selling price status; VAT, item/pack basis, availability and compatibility still need confirmation with the quote.
 
 Original photo files remain inaccessible while the workspace is disconnected. Two enlarged style photos are visible in the conversation, but no photo asset was imported. The shiny photo shows cards marked For iP 16 while the listing says S24, so treat shared photos as style illustrations rather than verified model-specific images.
+
+## Remaining case batch
+
+Imported 125 additional fully priced listings: 13 frame, 4 bracket, 24 thin, 24 colourful and 60 shockproof. Total: 330 products. Existing frame, bracket, fashion and shockproof listings from earlier screenshots were not reimported; overlapping screenshots were deduplicated.
+
+Most shockproof cases are £1.29; A14 is £1.28. Most colourful cases are £1.79; 11 Pro Max is £1.99. Frame cases are £1.65, bracket £1.99, thin £1.29. Preserve A32 4G versus 5G as separate rows and the ambiguous supplier label A51 4G?5G? pending clarification. Clipped labels or prices are excluded.
+
+The owner explicitly approved shared general style photos across model listings, as in the WhatsApp catalogue. Latest full photos map to frame (clear backs on wooden table), fashion/quality (four solid colour cases on grey background), colourful (two rows on wooden table), shockproof (clear case in packaging) and bracket (cases with fold-out stands on grey table). Prior full photos cover blurred and shiny. Thin currently has a shared screenshot thumbnail. Shared photos illustrate style; exact camera cut-outs and colours depend on the chosen model.
+
+Photo bytes are unavailable while the workspace is disconnected. No image assets or fabricated image URLs were added in this batch. Install supplied originals by style when file access resumes; user approval for this reuse is already recorded.

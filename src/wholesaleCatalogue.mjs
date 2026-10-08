@@ -1848,6 +1848,1131 @@ export const wholesaleProducts = [
     "code": "",
     "detail": "Supplier label: XR shiny",
     "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-rest-1-1",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 16 Plus",
+    "code": "",
+    "detail": "Supplier label: 16Plus frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-2",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16PRO frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-3",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-4",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 15 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 15PROMAX frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-5",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15Pro frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-6",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 15 Plus",
+    "code": "",
+    "detail": "Supplier label: 15Plus frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-7",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-8",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 14 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 14PROMAX frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-9",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14Pro frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-10",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 12 Pro Max / 13 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 12Promax/13Promax frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-11",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 13 / 14",
+    "code": "",
+    "detail": "Supplier label: 13/14 frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-12",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 12 / 12 Pro",
+    "code": "",
+    "detail": "Supplier label: 12/12PRO frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-1-13",
+    "category": "Cases",
+    "collection": "Magnetic frame cases",
+    "name": "Frame Case — 11",
+    "code": "",
+    "detail": "Supplier label: 11 frame",
+    "cataloguePricePence": 165
+  },
+  {
+    "id": "wa-rest-2-1",
+    "category": "Cases",
+    "collection": "Bracket cases",
+    "name": "Bracket Case — 17",
+    "code": "",
+    "detail": "Supplier label: 17 bracket",
+    "cataloguePricePence": 199
+  },
+  {
+    "id": "wa-rest-2-2",
+    "category": "Cases",
+    "collection": "Bracket cases",
+    "name": "Bracket Case — 16 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 16 Promax bracket",
+    "cataloguePricePence": 199
+  },
+  {
+    "id": "wa-rest-2-3",
+    "category": "Cases",
+    "collection": "Bracket cases",
+    "name": "Bracket Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16 Pro bracket",
+    "cataloguePricePence": 199
+  },
+  {
+    "id": "wa-rest-2-4",
+    "category": "Cases",
+    "collection": "Bracket cases",
+    "name": "Bracket Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 bracket",
+    "cataloguePricePence": 199
+  },
+  {
+    "id": "wa-rest-3-1",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A05",
+    "code": "",
+    "detail": "Supplier label: A05 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-2",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A05S",
+    "code": "",
+    "detail": "Supplier label: A05S thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-3",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A07",
+    "code": "",
+    "detail": "Supplier label: A07 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-4",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A15",
+    "code": "",
+    "detail": "Supplier label: A15 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-5",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A16",
+    "code": "",
+    "detail": "Supplier label: A16 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-6",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A25",
+    "code": "",
+    "detail": "Supplier label: A25 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-7",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A26",
+    "code": "",
+    "detail": "Supplier label: A26 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-8",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A32 4G",
+    "code": "",
+    "detail": "Supplier label: A32 4G thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-9",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A32 5G",
+    "code": "",
+    "detail": "Supplier label: A32 5G thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-10",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A33",
+    "code": "",
+    "detail": "Supplier label: A33 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-11",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A35",
+    "code": "",
+    "detail": "Supplier label: A35 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-12",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A36",
+    "code": "",
+    "detail": "Supplier label: A36 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-13",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A52",
+    "code": "",
+    "detail": "Supplier label: A52 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-14",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A53",
+    "code": "",
+    "detail": "Supplier label: A53 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-15",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A55",
+    "code": "",
+    "detail": "Supplier label: A55 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-16",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — A56",
+    "code": "",
+    "detail": "Supplier label: A56 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-17",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 17 Pro",
+    "code": "",
+    "detail": "Supplier label: 17 Pro thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-18",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 17 Air",
+    "code": "",
+    "detail": "Supplier label: 17 Air thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-19",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 17",
+    "code": "",
+    "detail": "Supplier label: 17 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-20",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16 PRO thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-21",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 16 Plus",
+    "code": "",
+    "detail": "Supplier label: 16 PLUS thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-22",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 16E",
+    "code": "",
+    "detail": "Supplier label: 16E thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-23",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 15 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 15 PRO MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-3-24",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15 PRO thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-4-1",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 17 Pro / 18 Pro",
+    "code": "",
+    "detail": "Supplier label: 17 Pro/18 Pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-2",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 17 Air",
+    "code": "",
+    "detail": "Supplier label: 17 Air colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-3",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 17",
+    "code": "",
+    "detail": "Supplier label: 17 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-4",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 16 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 16 ProMax colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-5",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-6",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-7",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 15 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 15 ProMax colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-8",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-9",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-10",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 14 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 14 ProMax colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-11",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-12",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 14",
+    "code": "",
+    "detail": "Supplier label: 14 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-13",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 13 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 13 ProMax colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-14",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 13 Pro",
+    "code": "",
+    "detail": "Supplier label: 13 PRO Colourful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-15",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 13",
+    "code": "",
+    "detail": "Supplier label: 13 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-16",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 12 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 12 ProMax colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-17",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 12 / 12 Pro",
+    "code": "",
+    "detail": "Supplier label: 12/12Pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-18",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 11 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 11 Promax colorful",
+    "cataloguePricePence": 199
+  },
+  {
+    "id": "wa-rest-4-19",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 11 Pro",
+    "code": "",
+    "detail": "Supplier label: 11pro colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-20",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — 11",
+    "code": "",
+    "detail": "Supplier label: 11 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-21",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S26 Ultra",
+    "code": "",
+    "detail": "Supplier label: S26ultra colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-22",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S26 Plus",
+    "code": "",
+    "detail": "Supplier label: S26 plus colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-23",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S26",
+    "code": "",
+    "detail": "Supplier label: S26 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-4-24",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S25 Ultra",
+    "code": "",
+    "detail": "Supplier label: S25 Ultra colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-rest-5-1",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 17",
+    "code": "",
+    "detail": "Supplier label: 17 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-2",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 16 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 16 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-3",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-4",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-5",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 15 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 15 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-6",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-7",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-8",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 14 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 14 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-9",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-10",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 14",
+    "code": "",
+    "detail": "Supplier label: 14 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-11",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 13 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 13 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-12",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 13 Pro",
+    "code": "",
+    "detail": "Supplier label: 13 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-13",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 13",
+    "code": "",
+    "detail": "Supplier label: 13 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-14",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 12 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 12 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-15",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 12 Pro",
+    "code": "",
+    "detail": "Supplier label: 12 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-16",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 12",
+    "code": "",
+    "detail": "Supplier label: 12 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-17",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 11 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 11 PRO MAX shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-18",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 11 Pro",
+    "code": "",
+    "detail": "Supplier label: 11 PRO shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-19",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 11",
+    "code": "",
+    "detail": "Supplier label: 11 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-20",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — xr",
+    "code": "",
+    "detail": "Supplier label: xr shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-21",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 7p / 8P",
+    "code": "",
+    "detail": "Supplier label: 7p/8P shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-22",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — 7",
+    "code": "",
+    "detail": "Supplier label: 7 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-23",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S26 Ultra",
+    "code": "",
+    "detail": "Supplier label: S 26 ULTRA shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-24",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S26 Plus",
+    "code": "",
+    "detail": "Supplier label: S 26 PLUS",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-25",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S24 Ultra",
+    "code": "",
+    "detail": "Supplier label: S 24 ULTRA",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-26",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S24 Plus",
+    "code": "",
+    "detail": "Supplier label: S24 PLUS shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-27",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S23 Ultra",
+    "code": "",
+    "detail": "Supplier label: S 23 ULTRA",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-28",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S23 Plus",
+    "code": "",
+    "detail": "Supplier label: S23 PLUS",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-29",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S22 Ultra",
+    "code": "",
+    "detail": "Supplier label: S22ULTRA shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-30",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S24 FE",
+    "code": "",
+    "detail": "Supplier label: S24 FE shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-31",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S23 FE",
+    "code": "",
+    "detail": "Supplier label: S23FE shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-32",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S26",
+    "code": "",
+    "detail": "Supplier label: S26 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-33",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S24",
+    "code": "",
+    "detail": "Supplier label: S24 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-34",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S23",
+    "code": "",
+    "detail": "Supplier label: S23 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-35",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — S22",
+    "code": "",
+    "detail": "Supplier label: S22 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-36",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A56",
+    "code": "",
+    "detail": "Supplier label: A56 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-37",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A55",
+    "code": "",
+    "detail": "Supplier label: A55 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-38",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A54",
+    "code": "",
+    "detail": "Supplier label: A54 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-39",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A53",
+    "code": "",
+    "detail": "Supplier label: A53 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-40",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A52",
+    "code": "",
+    "detail": "Supplier label: A52 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-41",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A51 4G?5G?",
+    "code": "",
+    "detail": "Supplier label: A51 4G?5G?",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-42",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A36",
+    "code": "",
+    "detail": "Supplier label: A36 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-43",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A35",
+    "code": "",
+    "detail": "Supplier label: A35 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-44",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A34",
+    "code": "",
+    "detail": "Supplier label: A34 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-45",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A33",
+    "code": "",
+    "detail": "Supplier label: A33 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-46",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A26",
+    "code": "",
+    "detail": "Supplier label: A26 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-47",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A25",
+    "code": "",
+    "detail": "Supplier label: A25 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-48",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A21S",
+    "code": "",
+    "detail": "Supplier label: A21S shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-49",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A17",
+    "code": "",
+    "detail": "Supplier label: A17 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-50",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A16",
+    "code": "",
+    "detail": "Supplier label: A16 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-51",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A15",
+    "code": "",
+    "detail": "Supplier label: A15 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-52",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A14",
+    "code": "",
+    "detail": "Supplier label: A14 shockproof",
+    "cataloguePricePence": 128
+  },
+  {
+    "id": "wa-rest-5-53",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A13 4G",
+    "code": "",
+    "detail": "Supplier label: A13 4G shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-54",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A12",
+    "code": "",
+    "detail": "Supplier label: A12 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-55",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A11",
+    "code": "",
+    "detail": "Supplier label: A11 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-56",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A07",
+    "code": "",
+    "detail": "Supplier label: A07 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-57",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A06",
+    "code": "",
+    "detail": "Supplier label: A06 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-58",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A05S",
+    "code": "",
+    "detail": "Supplier label: A05S shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-59",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A05",
+    "code": "",
+    "detail": "Supplier label: A05 shockproof",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-rest-5-60",
+    "category": "Cases",
+    "collection": "Shockproof cases",
+    "name": "Shockproof Case — A04",
+    "code": "",
+    "detail": "Supplier label: A04 shockproof",
+    "cataloguePricePence": 129
   }
 ];
 export const wholesaleCategories = [...new Set(wholesaleProducts.map(item=>item.category))];
