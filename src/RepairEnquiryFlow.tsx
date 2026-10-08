@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { repairQuestions } from './repairQuestions.mjs';
 import { repairModels } from './repairModels';
 import type { RepairPhone } from './EnquiryDialog';
 import { MessageReview } from './MessageReview';
@@ -10,6 +11,8 @@ const hints: Record<string, string> = { 'Screen replacement': 'Cracked glass, li
 export function RepairEnquiryFlow({ issue, phone }: { issue?: string; phone?: RepairPhone }) {
   const [step, setStep] = useState(1);
   const [data, setData] = useState<Record<string,string>>({ Device: 'Phone', Brand: phone?.brand ?? '', Model: phone?.model ?? '', UnknownModel: '', Issue: issue ?? 'Not sure', Symptoms: '', When: '', Name: '', Details: '' });
+  const [faultAnswers,setFaultAnswers] = useState<Record<string,string>>({});
+  const question = repairQuestions[data.Issue];
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => { titleRef.current?.focus(); }, [step]);
   const set = (key: string, value: string) => setData(previous => ({ ...previous, [key]: value }));
@@ -30,11 +33,12 @@ export function RepairEnquiryFlow({ issue, phone }: { issue?: string; phone?: Re
     </form> : step === 2 ? <form onSubmit={next}>
       <p className="flow-summary">{data.Device} · {data.Brand} · {data.UnknownModel === 'yes' ? 'Model not known' : data.Model}</p>
       <label>Repair needed<select value={data.Issue} onChange={e => { set('Issue', e.target.value); e.currentTarget.form?.querySelector('textarea')?.setCustomValidity(''); }}>{issues.map(item => <option key={item}>{item}</option>)}</select></label>
+      {question && <label>{question.label}<select value={faultAnswers[data.Issue] ?? ''} onChange={e=>setFaultAnswers(previous=>({...previous,[data.Issue]:e.target.value}))} required><option value="">Choose a symptom or “not sure”</option>{question.options.map(option=><option key={option}>{option}</option>)}</select></label>}
       <label>Describe the fault{data.Issue === 'Not sure' && ' (required)'}<textarea value={data.Symptoms} onChange={e => set('Symptoms', e.target.value)} onInput={e => e.currentTarget.setCustomValidity('')} required={data.Issue === 'Not sure'} rows={3} maxLength={600} placeholder={hints[data.Issue]} /></label>
       {data.Issue === 'Water damage / diagnostics' && <label>When did it happen?<input value={data.When} onChange={e => set('When', e.target.value)} placeholder="e.g. this morning or two days ago" maxLength={100} /></label>}
       <label>Your name (optional)<input value={data.Name} onChange={e => set('Name', e.target.value)} autoComplete="given-name" maxLength={100} /></label>
       <div className="flow-actions"><button className="text-button" type="button" onClick={() => setStep(1)}>Back to device</button><button className="button button-dark" type="submit">Review enquiry</button></div>
-    </form> : <MessageReview message={repairMessage(data)} onEdit={() => setStep(1)} editLabel="Edit device or fault" />}
+    </form> : <MessageReview message={repairMessage({...data,Fault:faultAnswers[data.Issue] ?? ''})} onEdit={() => setStep(1)} editLabel="Edit device or fault" />}
     <p className="privacy-note">iTop confirms support, parts, price and timing. This is an enquiry, not a booking or payment. Never include passwords or passcodes.</p>
   </div>;
 }

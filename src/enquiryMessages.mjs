@@ -1,6 +1,8 @@
+import { repairFaultDetail } from './repairQuestions.mjs';
+
 /** @param {Record<string, string>} data */
 export function repairMessage(data) {
-  const fields = [['Device', data.Device], ['Brand', data.Brand], ['Model', data.UnknownModel === 'yes' ? 'Not sure — please help identify' : data.Model], ['Issue', data.Issue], ['Symptoms', data.Symptoms], ['When', data.Issue === 'Water damage / diagnostics' ? data.When : ''], ['Name', data.Name], ['Details', data.Details]];
+  const fields = [['Device', data.Device], ['Brand', data.Brand], ['Model', data.UnknownModel === 'yes' ? 'Not sure — please help identify' : data.Model], ['Issue', data.Issue], ['Fault detail', repairFaultDetail(data.Issue,data.Fault)], ['Symptoms', data.Symptoms], ['When', data.Issue === 'Water damage / diagnostics' ? data.When : ''], ['Name', data.Name], ['Details', data.Details]];
   return ['Hi iTop, I’d like a repair quote.', ...fields.filter(([, value]) => value?.trim()).map(([key, value]) => key + ': ' + value.trim())].join('\n');
 }
 

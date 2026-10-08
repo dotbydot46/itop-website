@@ -310,3 +310,9 @@ footer { flex-wrap:wrap; align-items:center; }
 }
 
 .model-series-filter { width:min(100%,360px); margin:24px 0 0; }
+
+.repair-visit-checklist { background:#f4f5f6; }
+.repair-visit-checklist .service-notes ul { margin-top:0; }
+.repair-visit-checklist .service-notes li { margin-bottom:18px; }
+.repair-visit-checklist strong { color:var(--ink); }
+.repair-visit-checklist .text-button { min-height:44px; }

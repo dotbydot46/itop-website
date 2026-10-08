@@ -1,4 +1,5 @@
 import { ArrowUpRight } from '@phosphor-icons/react';
+import { RepairVisitChecklist } from './RepairVisitChecklist';
 import { PhoneBrandChoices } from './PhoneRepairPages';
 import { repairs } from './repairTypes';
 import { siteHref } from './sitePaths';
@@ -32,7 +33,7 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
       <ol className="repair-steps"><li><span>01</span><h3>Tell us</h3><p>Your model<br />and the fault.</p></li><li><span>02</span><h3>Confirm</h3><p>Price, parts,<br />time and cover.</p></li><li><span>03</span><h3>Visit</h3><p>Agree the work<br />before it starts.</p></li></ol>
       <button className="button button-cyan" onClick={() => onEnquire()}>Start a repair enquiry</button>
     </section>
-    <section className="content-section service-help"><div><p className="eyebrow">BEFORE YOU VISIT</p><h2>Need to know<br />a little more?</h2></div><div className="service-notes"><p>Warranty, aftercare, timing and data questions are answered in one place.</p><div className="visit-actions support-note"><a className="text-button" href={siteHref('support/')}>Warranty & aftercare</a><a className="text-button" href={siteHref('contact/')}>Visit & Contact</a></div></div></section>
+    <RepairVisitChecklist />
 
   </>;
 }

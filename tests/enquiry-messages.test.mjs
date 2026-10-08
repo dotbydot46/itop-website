@@ -31,3 +31,11 @@ test('repair supports unidentified models and includes water timing only for liq
   assert.match(message,/Symptoms: Won’t turn on/);
   assert.doesNotMatch(repairMessage({...data,Issue:'Screen replacement'}),/When:/);
 });
+
+test('repair messages include the active fault answer and reject answers from another fault',()=>{
+  const data={Device:'Phone',Brand:'Apple',Model:'iPhone 14',Issue:'Screen replacement',Fault:'Cracked glass'};
+  assert.match(repairMessage(data),/Fault detail: Cracked glass/);
+  assert.doesNotMatch(repairMessage({...data,Issue:'Battery replacement'}),/Cracked glass|Fault detail:/);
+  assert.match(repairMessage({...data,Issue:'Charging fault',Fault:'Charges only at an angle'}),/Fault detail: Charges only at an angle/);
+  assert.doesNotMatch(repairMessage({...data,Issue:'Not sure'}),/Fault detail:/);
+});
