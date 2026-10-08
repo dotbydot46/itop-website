@@ -58,8 +58,8 @@ test('business and trade requests keep their purpose and exclude unrelated field
 
 test('catalogue selection preserves item identity, code, variants and quantities', async()=>{
   const {wholesaleProducts,filterWholesaleProducts,catalogueQuoteItems}=await import('../src/wholesaleCatalogue.mjs');
-  assert.equal(wholesaleProducts.length,90);
-  assert.equal(new Set(wholesaleProducts.map(p=>p.id)).size,90);
+  assert.equal(wholesaleProducts.length,205);
+  assert.equal(new Set(wholesaleProducts.map(p=>p.id)).size,205);
   for(const p of wholesaleProducts) assert.ok(Number.isInteger(p.cataloguePricePence)&&p.cataloguePricePence>0);
   assert.equal(filterWholesaleProducts('sc-x82','Cables & adapters').length,1);
   assert.ok(filterWholesaleProducts('17 pro','Cases').some(item=>item.name==='Blurred Case — 17 / 18 Pro Max'));
@@ -73,4 +73,21 @@ test('catalogue selection preserves item identity, code, variants and quantities
   assert.doesNotMatch(message,/£|Total:/);
   const valid={id:product.id,quantity:'1',unit:'Packs'};
   for(const invalid of [[],Array(13).fill(valid),[valid,valid],[{...valid,id:'not-a-product'}],[{...valid,quantity:'0'}],[{...valid,quantity:'1.5'}],[{...valid,quantity:'10001'}],[{...valid,unit:'Unknown'}]]) assert.throws(()=>catalogueQuoteItems(invalid));
+});
+
+test('case import keeps style-specific selling prices and ambiguous model labels', async()=>{
+  const {wholesaleProducts,filterWholesaleProducts,catalogueQuoteItems}=await import('../src/wholesaleCatalogue.mjs');
+  const find=(label)=>wholesaleProducts.find(p=>p.detail==='Supplier label: '+label);
+  assert.equal(find('S24 shiny').cataloguePricePence,119);
+  assert.equal(find('A35 shiny').cataloguePricePence,99);
+  assert.equal(find('A56 shiny').cataloguePricePence,99);
+  assert.equal(find('S23 plus').cataloguePricePence,99);
+  assert.equal(find('S21').cataloguePricePence,99);
+  assert.equal(find('S25 ULTRA thin').cataloguePricePence,129);
+  assert.equal(find('S24 ultra colorful').cataloguePricePence,179);
+  assert.equal(find('S25/S24 blurred').cataloguePricePence,159);
+  assert.ok(filterWholesaleProducts('16E/se4','Cases').length===1);
+  const item=find('12promax/13promax blurred');
+  assert.match(catalogueQuoteItems([{id:item.id,quantity:'2',unit:'Items'}])[0].variant,/12promax\/13promax/);
+  assert.ok(!wholesaleProducts.some(p=>p.detail==='Supplier label: 7P/8P'));
 });

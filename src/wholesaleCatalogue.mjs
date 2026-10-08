@@ -1,6 +1,6 @@
 /** Product descriptions transcribed from user-supplied WhatsApp screenshots.
  * Supplier labels do not verify device compatibility, authenticity, stock or specifications.
- * Prices are screenshot reference prices, not verified per-unit quotes. No warranties, pack sizes or stock counts are inferred.
+ * The owner confirmed screenshot amounts are iTop selling prices on 8 October 2026. VAT and item/pack basis require confirmation. No warranties, pack sizes or stock counts are inferred.
  * @type {{id:string,category:string,collection:string,name:string,code:string,detail:string,cataloguePricePence:number}[]}
  */
 export const wholesaleProducts = [
@@ -813,6 +813,1041 @@ export const wholesaleProducts = [
     "code": "MXS-015",
     "detail": "Supplier reference: ST81",
     "cataloguePricePence": 621
+  },
+  {
+    "id": "wa-cases-1-1",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 15 Plus",
+    "code": "",
+    "detail": "Supplier label: 15 PLUS thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-2",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-3",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 14 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 14 PRO MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-4",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14 PRO thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-5",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 14",
+    "code": "",
+    "detail": "Supplier label: 14 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-6",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 13 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 13 PRO MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-7",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 13",
+    "code": "",
+    "detail": "Supplier label: 13 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-8",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 12 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 12 PRO MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-9",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 12/12 Pro",
+    "code": "",
+    "detail": "Supplier label: 12/12 PRO thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-10",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 11 Pro MAX",
+    "code": "",
+    "detail": "Supplier label: 11 PRO MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-11",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 11 Pro",
+    "code": "",
+    "detail": "Supplier label: 11 PRO thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-12",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 11",
+    "code": "",
+    "detail": "Supplier label: 11 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-13",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — XS MAX",
+    "code": "",
+    "detail": "Supplier label: XS MAX thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-14",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — XS",
+    "code": "",
+    "detail": "Supplier label: XS thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-15",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — XR",
+    "code": "",
+    "detail": "Supplier label: XR thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-16",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — 7P",
+    "code": "",
+    "detail": "Supplier label: 7P thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-17",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S25 Ultra",
+    "code": "",
+    "detail": "Supplier label: S25 ULTRA thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-18",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S25 Plus",
+    "code": "",
+    "detail": "Supplier label: S25 PLUS thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-19",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S25",
+    "code": "",
+    "detail": "Supplier label: S25 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-20",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S24 Ultra",
+    "code": "",
+    "detail": "Supplier label: S24 ULTRA thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-21",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S24 Plus",
+    "code": "",
+    "detail": "Supplier label: S24 PLUS thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-22",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S24 FE",
+    "code": "",
+    "detail": "Supplier label: S24 FE thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-23",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S24",
+    "code": "",
+    "detail": "Supplier label: S24 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-24",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S23 Ultra",
+    "code": "",
+    "detail": "Supplier label: S23 ULTRA thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-25",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S23 Plus",
+    "code": "",
+    "detail": "Supplier label: S23 PLUS",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-26",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S23 FE",
+    "code": "",
+    "detail": "Supplier label: S23 FE thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-27",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S23",
+    "code": "",
+    "detail": "Supplier label: S23 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-28",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S22 Ultra",
+    "code": "",
+    "detail": "Supplier label: S22 ULTRA thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-29",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S22",
+    "code": "",
+    "detail": "Supplier label: S22 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-30",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S21 Ultra",
+    "code": "",
+    "detail": "Supplier label: S21 ULTRA thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-31",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S21 FE",
+    "code": "",
+    "detail": "Supplier label: S21 FE thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-1-32",
+    "category": "Cases",
+    "collection": "Thin cases",
+    "name": "Thin Case — S21",
+    "code": "",
+    "detail": "Supplier label: S21 thin",
+    "cataloguePricePence": 129
+  },
+  {
+    "id": "wa-cases-2-1",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S25 Plus",
+    "code": "",
+    "detail": "Supplier label: S25 plus colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-2",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S24 Ultra",
+    "code": "",
+    "detail": "Supplier label: S24 ultra colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-3",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S24 Plus",
+    "code": "",
+    "detail": "Supplier label: S24 plus colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-4",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S24",
+    "code": "",
+    "detail": "Supplier label: S24 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-5",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — s23 Ultra",
+    "code": "",
+    "detail": "Supplier label: s23 Ultra colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-6",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S23 Plus",
+    "code": "",
+    "detail": "Supplier label: S23 Plus colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-7",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S23 FE",
+    "code": "",
+    "detail": "Supplier label: S23 FE colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-2-8",
+    "category": "Cases",
+    "collection": "Fashion MagSafe cases",
+    "name": "Colourful Case — S23",
+    "code": "",
+    "detail": "Supplier label: S23 colorful",
+    "cataloguePricePence": 179
+  },
+  {
+    "id": "wa-cases-3-1",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 17",
+    "code": "",
+    "detail": "Supplier label: 17 blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-2",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 16 Plus",
+    "code": "",
+    "detail": "Supplier label: 16plus blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-3",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16pro blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-4",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-5",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 15 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 15promax blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-6",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 15 Plus",
+    "code": "",
+    "detail": "Supplier label: 15plus blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-7",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15pro blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-8",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-9",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 14 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 14promax blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-10",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14pro blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-11",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 12 Pro Max/13 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 12promax/13promax blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-12",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 13 Pro",
+    "code": "",
+    "detail": "Supplier label: 13pro blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-13",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 11 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 11promax blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-14",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — 11 Pro",
+    "code": "",
+    "detail": "Supplier label: 11pro blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-15",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — S25 Ultra",
+    "code": "",
+    "detail": "Supplier label: S25ultra blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-16",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — S25/S24",
+    "code": "",
+    "detail": "Supplier label: S25/S24 blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-17",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — S24 Ultra",
+    "code": "",
+    "detail": "Supplier label: S24ultra blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-3-18",
+    "category": "Cases",
+    "collection": "MagSafe iStyle cases",
+    "name": "Blurred Case — S24 Plus",
+    "code": "",
+    "detail": "Supplier label: S24 Plus blurred",
+    "cataloguePricePence": 159
+  },
+  {
+    "id": "wa-cases-4-1",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 15 Pro Max",
+    "code": "",
+    "detail": "Supplier label: Iphone15_PROMAX · With lens protectors (supplier label)",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-2",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 15 Plus",
+    "code": "",
+    "detail": "Supplier label: Iphone15_PLUS · With lens protectors (supplier label)",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-3",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 15 Pro",
+    "code": "",
+    "detail": "Supplier label: Iphone15_PRO · With lens protectors (supplier label)",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-4",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 15",
+    "code": "",
+    "detail": "Supplier label: Iphone15 · With lens protectors (supplier label)",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-5",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 14 Pro Max",
+    "code": "",
+    "detail": "Supplier label: Iphone14_PROMAX",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-6",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 14 Pro",
+    "code": "",
+    "detail": "Supplier label: Iphone14_PRO",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-7",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 13 Pro Max",
+    "code": "",
+    "detail": "Supplier label: Iphone13_PROMAX",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-8",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 13 Pro",
+    "code": "",
+    "detail": "Supplier label: Iphone13_PRO",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-9",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 12 Pro Max",
+    "code": "",
+    "detail": "Supplier label: Iphone12_PROMAX",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-10",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 11 Pro Max",
+    "code": "",
+    "detail": "Supplier label: Iphone 11 promax",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-4-11",
+    "category": "Cases",
+    "collection": "Packaged magnetic cases",
+    "name": "Packaged Magnetic Case — iPhone 11 Pro",
+    "code": "",
+    "detail": "Supplier label: Iphone 11 pro",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-5-1",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A05",
+    "code": "",
+    "detail": "Supplier label: A05 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-2",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A05s",
+    "code": "",
+    "detail": "Supplier label: A05s shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-3",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A06",
+    "code": "",
+    "detail": "Supplier label: A06 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-4",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A14",
+    "code": "",
+    "detail": "Supplier label: A14 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-5",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A15",
+    "code": "",
+    "detail": "Supplier label: A15 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-6",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A16",
+    "code": "",
+    "detail": "Supplier label: A16 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-7",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A25",
+    "code": "",
+    "detail": "Supplier label: A25",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-8",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A26",
+    "code": "",
+    "detail": "Supplier label: A26",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-9",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A35",
+    "code": "",
+    "detail": "Supplier label: A35 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-5-10",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A55",
+    "code": "",
+    "detail": "Supplier label: A55 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-11",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — A56",
+    "code": "",
+    "detail": "Supplier label: A56 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-5-12",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S25 Ultra",
+    "code": "",
+    "detail": "Supplier label: S25ultra shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-13",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S24 Plus",
+    "code": "",
+    "detail": "Supplier label: S24Plus shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-14",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S24 FE",
+    "code": "",
+    "detail": "Supplier label: S24fe",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-15",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S24",
+    "code": "",
+    "detail": "Supplier label: S24 shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-16",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S23U",
+    "code": "",
+    "detail": "Supplier label: S23U",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-17",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S23 Plus",
+    "code": "",
+    "detail": "Supplier label: S23 plus",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-5-18",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S23 FE",
+    "code": "",
+    "detail": "Supplier label: S23fe",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-19",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S23",
+    "code": "",
+    "detail": "Supplier label: S23",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-20",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S22 Ultra",
+    "code": "",
+    "detail": "Supplier label: S22ultra",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-21",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S22 Plus",
+    "code": "",
+    "detail": "Supplier label: S22 plus shiny",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-22",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S22",
+    "code": "",
+    "detail": "Supplier label: S22",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-23",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S21 Ultra",
+    "code": "",
+    "detail": "Supplier label: S21ultra",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-24",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S21 Plus",
+    "code": "",
+    "detail": "Supplier label: S21 plus",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-25",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S21 FE",
+    "code": "",
+    "detail": "Supplier label: S21fe",
+    "cataloguePricePence": 119
+  },
+  {
+    "id": "wa-cases-5-26",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — S21",
+    "code": "",
+    "detail": "Supplier label: S21",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-1",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 16 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 16promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-2",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 16 Pro",
+    "code": "",
+    "detail": "Supplier label: 16pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-3",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 16",
+    "code": "",
+    "detail": "Supplier label: 16 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-4",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 16E/se4",
+    "code": "",
+    "detail": "Supplier label: 16E/se4 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-5",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 15 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 15promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-6",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 15 Pro",
+    "code": "",
+    "detail": "Supplier label: 15pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-7",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 15",
+    "code": "",
+    "detail": "Supplier label: 15 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-8",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 14 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 14promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-9",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 14 Pro",
+    "code": "",
+    "detail": "Supplier label: 14pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-10",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 14",
+    "code": "",
+    "detail": "Supplier label: 14 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-11",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 13 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 13promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-12",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 13 Pro",
+    "code": "",
+    "detail": "Supplier label: 13pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-13",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 13",
+    "code": "",
+    "detail": "Supplier label: 13 shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-14",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 12 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 12promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-15",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 12 Pro",
+    "code": "",
+    "detail": "Supplier label: 12Pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-16",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 11 Pro Max",
+    "code": "",
+    "detail": "Supplier label: 11promax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-17",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — 11 Pro",
+    "code": "",
+    "detail": "Supplier label: 11pro shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-18",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — Xsmax",
+    "code": "",
+    "detail": "Supplier label: Xsmax shiny",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-19",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — X/Xs",
+    "code": "",
+    "detail": "Supplier label: X/Xs",
+    "cataloguePricePence": 99
+  },
+  {
+    "id": "wa-cases-6-20",
+    "category": "Cases",
+    "collection": "Shiny magnetic cases",
+    "name": "Shiny Case — XR",
+    "code": "",
+    "detail": "Supplier label: XR shiny",
+    "cataloguePricePence": 99
   }
 ];
 export const wholesaleCategories = [...new Set(wholesaleProducts.map(item=>item.category))];

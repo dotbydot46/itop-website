@@ -2,7 +2,7 @@
 
 Source: user-supplied WhatsApp catalogue screenshots in this conversation. Uploaded iTops Wholesale Stock.zip could not be opened because the workspace was disconnected. Screenshots are readable in the conversation; original image bytes have not yet been accessible for product-photo assets.
 
-Imported 90 fully visible listings, comprising 30 collections, grouped into 11 categories. This is a partial snapshot, not a full stock export. Ignore clipped header/footer listings. Do not interpret 'See all' as containing only the three visible products.
+Imported 205 fully visible listings, grouped into 11 categories (the initial 90 plus 115 additional cases). This is a partial snapshot, not a full stock export. Ignore clipped header/footer listings. Do not interpret 'See all' as containing only the three visible products.
 
 The user explicitly requested category screenshots with photos and prices. Price values are transcribed from the visible current prices, with crossed-out promotional amounts omitted. Prices are stored in integer pence and labelled catalogue price, not used for checkout or calculated totals. VAT treatment and item/pack quantities are not established; final trade prices remain confirmed by staff.
 
@@ -19,10 +19,12 @@ Known follow-up:
 
 Quote flow: search/filter → choose up to 12 products → adjust item/pack quantities → existing quote builder → editable message review → visitor chooses whether to send on WhatsApp to +447417465401.
 
-## Additional case screenshots — draft
+## Additional case screenshots — imported
 
-115 additional fully readable model/style listings are recorded in `wholesale-cases-draft.json`: 32 thin, 8 colourful, 18 additional blurred, 11 packaged and 46 shiny listings. Overlapping screenshots and three blurred products already in the initial import are excluded. The clipped 7P/8P row is not imported.
+On 8 October 2026 the owner confirmed the screenshot amounts are iTop selling prices. The VERON HUB LTD label does not change that explicit confirmation. The 115 additional readable listings are now in `src/wholesaleCatalogue.mjs`: 32 thin, 8 colourful, 18 additional blurred, 11 packaged and 46 shiny. Overlapping screenshots and three existing blurred products were excluded; total catalogue entries: 205.
 
-The enlarged S24 shiny product screen identifies VERON HUB LTD. Whether these amounts are supplier buying prices or iTop customer selling prices remains unresolved. This draft deliberately contains no price amounts and is not loaded by the public catalogue. Confirm the source and iTop prices before merging these rows into the live product data. Earlier screenshot reference prices likewise remain unverified.
+Thin cases are £1.29, colourful £1.79, blurred £1.59, packaged £0.99. Shiny Galaxy listings are £1.19 except A35, A56, S23 Plus and S21 at £0.99; shiny iPhone listings are £0.99. Crossed-out previous amounts are not imported. The clipped 7P/8P row remains excluded.
 
-Original photo files remain inaccessible while the workspace is disconnected. Two enlarged style photos are visible in the conversation, but no photo asset was imported. The shiny photo shows cards marked For iP 16 while the listing says S24, so treat shared photos as style illustrations rather than verified model-specific images. Preserve supplier labels and confirm fit with iTop.
+The accompanying case import manifest retains original supplier labels and owner-confirmed prices. This confirmation resolves buying versus selling price status; VAT, item/pack basis, availability and compatibility still need confirmation with the quote.
+
+Original photo files remain inaccessible while the workspace is disconnected. Two enlarged style photos are visible in the conversation, but no photo asset was imported. The shiny photo shows cards marked For iP 16 while the listing says S24, so treat shared photos as style illustrations rather than verified model-specific images.
