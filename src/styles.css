@@ -269,3 +269,42 @@ footer { flex-wrap:wrap; align-items:center; }
   .home-shelf-heading h2 { font-size:28px; }
   .home-image-note { padding:22px 8px 0; }
 }
+
+/* Repair directory and model pages use the same enquiry flow and fault cards. */
+.repair-directory { padding:28px 3.85% 52px; }
+.phone-brand-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.phone-brand { padding:26px; border:1px solid #d7dade; background:#f4f5f6; }
+.phone-brand:hover,.phone-model:hover { background:#eaf8ff; border-color:#007eb1; }
+.phone-brand h3 { font-size:28px; letter-spacing:-.04em; margin:20px 0; }
+.brand-link { display:flex; align-items:center; justify-content:space-between; color:#007eb1; font-size:16px; font-weight:600; }
+.directory-note { color:var(--muted); font-size:16px; line-height:1.6; margin:20px 0; max-width:760px; }
+.repair-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding:22px 3.85% 0; font-size:14px; line-height:1.6; }
+.repair-breadcrumb a { text-decoration:underline; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center; }
+.model-page-hero h1 { font-size:clamp(48px,6vw,86px); overflow-wrap:break-word; }
+.model-search-heading { display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+.model-search-heading h2 { font-size:32px; letter-spacing:-.04em; }
+.model-search-heading label { width:min(100%,360px); margin:0; }
+.phone-model-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.phone-model { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px; min-height:64px; border:1px solid #d7dade; font-size:16px; font-weight:600; }
+.phone-model svg { flex-shrink:0; color:#007eb1; }
+.model-result-count { font-size:14px; color:var(--muted); margin-bottom:18px; }
+.model-other { margin-top:28px; padding-top:24px; border-top:1px solid #d7dade; font-size:16px; line-height:1.6; }
+.model-other button { margin-top:12px; min-height:44px; }
+.empty-models { padding:24px 0; line-height:1.6; }
+.model-next-step { padding:40px 3.85% 56px; background:#f4f5f6; }
+.model-next-step h2 { font-size:30px; letter-spacing:-.04em; }
+.model-next-step p { font-size:16px; line-height:1.7; color:var(--muted); max-width:700px; margin:16px 0 24px; }
+.model-next-step a { min-height:44px; }
+@media(min-width:1550px) { .repair-directory,.repair-breadcrumb,.model-next-step { padding-left:max(3.85%,calc((100vw - 1450px)/2)); padding-right:max(3.85%,calc((100vw - 1450px)/2)); } }
+@media(max-width:720px) {
+  .repair-directory { padding:20px 24px 36px; }
+  .phone-brand-grid { grid-template-columns:1fr; gap:12px; }
+  .phone-brand { padding:22px; }
+  .phone-brand h3 { font-size:26px; margin:14px 0; }
+  .phone-model-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .phone-model { padding:14px; gap:8px; line-height:1.5; }
+  .model-search-heading { gap:20px; }
+  .model-search-heading label { width:100%; }
+  .repair-breadcrumb { padding:16px 24px 0; gap:8px; }
+  .model-next-step { padding:32px 24px 40px; }
+}

@@ -1,14 +1,9 @@
-import { DeviceMobile, BatteryCharging, Plug, Drop, Camera, Question, ArrowUpRight } from '@phosphor-icons/react';
+import { ArrowUpRight } from '@phosphor-icons/react';
+import { PhoneBrandChoices } from './PhoneRepairPages';
+import { repairs } from './repairTypes';
 import { siteHref } from './sitePaths';
 
-const repairs = [
-  { title: 'Screen replacement', issue: 'Screen replacement', description: 'Cracked glass, lines on the display, a black screen or touch that no longer responds.', icon: DeviceMobile },
-  { title: 'Battery replacement', issue: 'Battery replacement', description: 'Fast battery drain, unexpected shutdowns or a phone that struggles to hold its charge.', icon: BatteryCharging },
-  { title: 'Charging faults', issue: 'Charging fault', description: 'A loose connection, unreliable charging or a device that will not charge. Tell us what you have tried.', icon: Plug },
-  { title: 'Liquid damage & diagnostics', issue: 'Water damage / diagnostics', description: 'An inspection enquiry after liquid exposure or an unexplained fault. Recovery is not guaranteed.', icon: Drop },
-  { title: 'Camera, speaker & microphone', issue: 'Camera / speaker / microphone', description: 'Blurry images, no sound or calls where you cannot be heard. We will discuss the symptoms first.', icon: Camera },
-  { title: 'Not sure what is wrong?', issue: 'Not sure', description: 'Describe what happens and when it started. Ask about another fault or supported device.', icon: Question },
-];
+
 
 export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void }) {
   return <>
@@ -16,6 +11,7 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
       <div><p className="eyebrow">ITOP / REPAIRS / CATFORD</p><h1 id="repairs-title">Back to<br />working<span>.</span></h1></div>
       <div className="hero-copy"><p>Phone, laptop and gadget repair enquiries.<br className="desktop-break" /> Tell us the model and the fault.<br className="desktop-break" /> We’ll confirm the options before you visit.</p><button className="button button-dark" onClick={() => onEnquire()}>Start a repair enquiry</button><a className="repair-call" href="tel:+447760616466">Or call 07760 616 466</a></div>
     </section>
+    <PhoneBrandChoices />
     <section className="repair-services" aria-labelledby="services-title">
       <div className="section-heading"><h2 id="services-title">What needs fixing?</h2><p>Choose a starting point. Parts and support depend on your model.</p></div>
       <div className="repair-service-grid">{repairs.map(({ title, issue, description, icon: Icon }) => <article className="repair-service" key={issue}>
