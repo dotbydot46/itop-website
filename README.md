@@ -26,6 +26,7 @@ The build creates `dist/client`, `dist/server/index.js` and `dist/.openai/hostin
 ## Features
 
 - Responsive homepage and mobile navigation.
+- Dedicated `/repairs` page with six service enquiry categories, repair steps and expandable FAQs.
 - Repair, accessory, wholesale and buy/sell enquiry dialogs.
 - Local draft preview and editable details before opening WhatsApp.
 - Tap-to-call, email, directions and Google-profile links.
@@ -48,4 +49,4 @@ Contact details were carried over from the old iTop website. Google listing veri
 
 ## Next phase
 
-Preserve the approved homepage. Add dedicated Repairs, Accessories, Wholesale and Buy/Sell pages after agreeing their scope. Confirm business details and policy wording before public launch; then complete remaining accessibility and real-device checks and connect the final domain.
+Preserve the approved homepage and Repairs page. Add dedicated Accessories, Wholesale and Buy/Sell pages after agreeing their scope. Confirm business details and policy wording before public launch; then complete remaining accessibility and real-device checks and connect the final domain.

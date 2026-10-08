@@ -66,3 +66,20 @@ test("emits the files required by Sites packaging", async () => {
   await access(new URL("../dist/server/index.js", import.meta.url));
   await access(new URL("../dist/.openai/hosting.json", import.meta.url));
 });
+
+test("serves the app shell for a direct Repairs page visit", async () => {
+  const calls = [];
+  const response = await worker.fetch(new Request("https://example.test/repairs", {
+    headers: { accept: "text/html" },
+  }), {
+    ASSETS: { fetch: async request => {
+      const pathname = new URL(request.url).pathname;
+      calls.push(pathname);
+      return new Response(pathname === "/index.html" ? "app" : "missing", {
+        status: pathname === "/index.html" ? 200 : 404,
+      });
+    } },
+  });
+  assert.equal(response.status, 200);
+  assert.deepEqual(calls, ["/repairs", "/index.html"]);
+});

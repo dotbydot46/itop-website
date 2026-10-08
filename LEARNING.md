@@ -5,12 +5,17 @@ This is the separate option-3 portfolio prototype, built with React, TypeScript 
 ## Start with these files
 
 - `src/App.tsx`: page sections, reusable product tile, enquiry dialog, and TypeScript types.
+- `src/RepairsPage.tsx`: the dedicated repair page, service data and native expandable FAQs.
 - `src/styles.css`: colour tokens, desktop grid, responsive breakpoints, focus and hover states.
 - `src/main.jsx`: React entry point and locally served Inter font imports.
 - `public/assets/`: actual iTop logo plus generic generated concept-product photographs.
 - `design-qa.md`: what was visually compared and tested.
 
 ## How the interface works
+
+The `/repairs` path renders `RepairsPage`; `/` renders the approved homepage. A route is a website address for a particular page. The browser follows ordinary links, while the hosting worker serves the React app for a direct `/repairs` visit. This deliberately simple setup needs no new routing dependency yet.
+
+Each service passes its issue name to the shared enquiry dialog. For example, the battery button starts the form with “Battery replacement” selected. One form implementation stays consistent across both pages.
 
 1. The `products` array holds the category data. `.map()` renders one `ProductTile` per entry, so there is no repeated card markup to maintain.
 2. The `Product` and `EnquiryKind` types catch inconsistent data while you code. Try changing a category field and run `npx tsc --noEmit`.

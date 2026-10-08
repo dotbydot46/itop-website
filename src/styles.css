@@ -86,3 +86,29 @@ textarea { resize:vertical; }
 @media(max-width:720px) { .header { height:76px; padding:0 22px; gap:22px; position:relative; } .brand { width:73px; } .ask-button { margin-left:auto; border:0; padding:0; } .ask-button span { display:none; } .menu-button { display:flex; } .navigation { display:none; } .navigation.is-open { display:flex; position:absolute; top:76px; left:0; right:0; z-index:5; background:white; padding:16px 24px; border:0; border-bottom:1px solid #c8cbd0; gap:0; flex-direction:column; align-items:stretch; } .hero { grid-template-columns:1fr; gap:25px; padding:28px 24px 36px; } .hero h1 { font-size:clamp(48px,10.7vw,74px); letter-spacing:-.06em; } .hero-copy { padding-left:0; } .hero-copy p { font-size:17px; max-width:450px; } .hero .button { min-width:0; } .accessories { padding:0 16px 32px; } .product-grid { grid-template-columns:1fr; gap:30px; } .product-photo img { aspect-ratio:1.55; } .product-copy { padding:16px 8px 0; } .product h2 { font-size:27px; } .product p { font-size:16px; max-width:none; } .availability-row { padding:27px 8px 0; align-items:flex-start; flex-direction:column; gap:15px; } .availability-row span { font-size:12px; line-height:1.5; } .repair-band { display:flex; flex-direction:column; align-items:stretch; padding:40px 24px; gap:32px; } .repair-intro h2 { font-size:37px; } .repair-intro p { font-size:16px; } .repair-steps li { padding:0 12px; } .repair-steps li:first-child { padding-left:0; border:0; } .repair-steps span { font-size:26px; } .repair-steps h3 { font-size:19px; } .repair-steps p { white-space:normal; font-size:14px; } .repair-steps br { display:none; } .repair-band>.button { align-self:flex-start; } .content-section { padding:55px 24px; grid-template-columns:1fr; gap:35px; } .content-section h2 { font-size:39px; } .trade-options { grid-template-columns:1fr; gap:34px; } footer { flex-direction:column; padding:26px 24px; gap:15px; line-height:1.5; } .dialog-inner { padding:24px; } .dialog-inner h2 { font-size:31px; } .form-row { grid-template-columns:1fr; gap:0; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
 @media(max-width:720px) { .ask-button,.menu-button { width:44px; height:44px; justify-content:center; } .text-button { min-height:44px; align-items:center; } }
+.navigation a[aria-current="page"] { color:#007eb1; }
+.repairs-hero { padding-top:44px; padding-bottom:50px; }
+.repairs-hero .eyebrow { margin-bottom:24px; }
+.repair-call { display:block; width:fit-content; font-size:14px; color:var(--muted); margin-top:18px; padding:8px 0; }
+.repair-call:hover { color:var(--ink); text-decoration:underline; }
+.repair-services { padding:24px 3.85% 64px; }
+.section-heading { display:flex; align-items:baseline; justify-content:space-between; gap:30px; margin-bottom:26px; }
+.section-heading h2 { font-size:32px; letter-spacing:-.05em; }
+.section-heading p { font-size:15px; line-height:1.6; color:var(--muted); }
+.repair-service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:40px; }
+.repair-service { display:flex; flex-direction:column; align-items:flex-start; padding:28px 0 24px; border-top:1px solid #d7dade; }
+.repair-service>svg { margin-bottom:18px; color:#007eb1; }
+.repair-service h3 { font-size:23px; font-weight:700; letter-spacing:-.04em; line-height:1.2; }
+.repair-service p { color:var(--muted); font-size:15px; line-height:1.6; margin:12px 0 16px; max-width:380px; }
+.repair-service .text-button { margin-top:auto; min-height:44px; gap:8px; text-align:left; }
+.faq-list details { border-top:1px solid #d7dade; }
+.faq-list details:last-child { border-bottom:1px solid #d7dade; }
+.faq-list summary { cursor:pointer; font-weight:600; font-size:18px; padding:22px 0; line-height:1.4; }
+.faq-list summary::marker { color:#007eb1; }
+.faq-list summary:focus-visible { outline:3px solid #007faf; outline-offset:5px; }
+.faq-list details p { color:var(--muted); font-size:16px; line-height:1.7; padding:0 0 24px; }
+.repair-visit { background:#f4f5f6; align-items:center; }
+.repair-visit-copy { color:var(--muted); line-height:1.7; max-width:480px; margin-bottom:25px; }
+@media(min-width:1550px) { .repair-services { padding-left:max(3.85%,calc((100vw - 1450px)/2)); padding-right:max(3.85%,calc((100vw - 1450px)/2)); } }
+@media(max-width:1100px) { .repair-service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 30px; } .section-heading { align-items:flex-start; flex-direction:column; gap:12px; } }
+@media(max-width:720px) { .repairs-hero { padding:32px 24px 28px; gap:28px; } .repairs-hero .eyebrow { margin-bottom:22px; } .repair-services { padding:24px 24px 36px; } .section-heading h2 { font-size:30px; } .repair-service-grid { grid-template-columns:1fr; } .repair-service { padding:25px 0; } .repair-service h3 { font-size:24px; } .repair-service p { max-width:none; font-size:16px; } .faq-list summary { font-size:17px; } .repair-call { min-height:44px; display:flex; align-items:center; margin-top:10px; } }

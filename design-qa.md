@@ -1,5 +1,51 @@
 # iTop option 3 design QA
 
+## Repairs extension — 8 October 2026
+
+final result: passed
+
+Scope: add the user-approved dedicated `/repairs` page without redesigning the homepage. The selected option-3 mock remains the homepage reference; the approved implemented homepage supplies the shared header, type, palette and button system for the new page. There is no separate exact Repairs mock, so its new service grid, FAQs and copy are intentional extensions, not a claimed pixel-perfect clone.
+
+Evidence:
+
+- Source visual: `docs/selected-option-3.png`, 1487 × 1058 pixels.
+- Homepage regression capture: `/workspace/scratch/itop-home-repairs-regression.jpg`, 1348 × 926 pixels, same desktop browser view as the new page.
+- New page: `docs/repairs-desktop.jpg`, 1348 × 926 pixels; lower-page FAQ state: `docs/repairs-lower.jpg`.
+- Desktop CSS content width: 1333 pixels plus a 15px scrollbar; density 1. Source normalized uniformly to 1348px screenshot width, then cropped to 926px height for the visual board. This board includes the implementation scrollbar; its 15px contribution is excluded from drift judgment. No warped or stretched asset comparisons.
+- Full-view homepage/reference regression: `docs/repairs-home-comparison.jpg`.
+- Shared design comparison: `docs/repairs-style-comparison.jpg`, homepage and Repairs together at the same viewport, top scroll position, menu closed and no dialog.
+- Focused shared header/type/button comparison: `docs/repairs-header-comparison.jpg`. Headline, real logo, nav, font weight and button edges remain legible at focused scale.
+- Responsive evidence: `docs/repairs-responsive.jpg`, browser iframes 390 × 844 and 834 × 844; content widths 375 and 819 after scrollbars. Both scrollWidth values matched clientWidth. One-column mobile and two-column tablet services inspected.
+
+Required surfaces:
+
+- Fonts/type: Inter 400–800 retained; shared oversized 800 headline with tight tracking; readable service labels and FAQ hierarchy, no observed clipping.
+- Spacing/layout: shared header and page gutter; square dark buttons; service rows divided by simple rules, not generic rounded cards. New page intentionally lacks the homepage product shelf and has more heading/context space. Desktop, tablet and mobile inspected.
+- Colors: original white/charcoal/cyan tokens preserved, darker cyan links and visible focus styles. Active Repairs navigation uses the existing link color.
+- Assets: real logo and existing AI product imagery unchanged. New icons are Phosphor light-weight library icons, not raster photo stand-ins or handcrafted art. No new shop/stock imagery invented.
+- Copy: six enquiry categories match research scope; price, warranty and same-day wording remain conditional. No fixed prices, claimed review ratings, warranty periods or confirmed booking state.
+
+Interactions tested:
+
+- Homepage Repairs link opens the dedicated route; brand link returns home; Visit details returns to `/#visit`.
+- All six category buttons selected their expected repair issue.
+- Battery enquiry preview included model, issue and fault details and a correctly encoded WhatsApp draft. No WhatsApp message was sent.
+- Edit details and a second Preview retained the entered model; direct input inspection was redacted by browser safeguards, so this was verified through the visible message preview.
+- Required model validation rejects an empty form on mobile. Native dialog Escape closes and restores focus to the trigger after the render settles.
+- Mobile menu opens/closes; primary mobile enquiry opens; expandable warranty FAQ shows its answer.
+- No app-origin console warnings/errors found. Browser-extension metadata warnings were excluded.
+- Build, TypeScript and 5 hosting tests passed, including a direct `/repairs` shell-fallback test.
+
+Comparison history: first full and focused comparison found no actionable P0/P1/P2 drift, so no visual revision loop was required. The new page is an intentional design-system extension. Homepage mock-to-real asset differences and original logo substitution remain previously accepted. Additional route metadata and a hosting regression test were added during functional checks; neither altered the rendered design.
+
+Remaining gaps: full screen-reader and real-device audits, 200% text enlargement, client-side metadata indexing, confirmed weekly business hours and owner-approved warranty policy. These are not represented as completed or verified. No remaining observed P0/P1/P2 issues.
+
+Implementation checklist: page built; interactions and responsiveness checked; existing homepage preserved; publication follows successful checks. Subsequent changes must re-run appropriate checks.
+
+---
+
+## Original homepage QA history
+
 final result: passed
 
 ## Evidence and state
