@@ -5,7 +5,7 @@ import { wholesaleCatalogueUrl } from './wholesaleContact';
 
 import { wholesaleStylePhoto } from './wholesalePhotos.mjs';
 import { siteHref } from './sitePaths';
-import { wholesaleProductName, wholesaleProductDetail } from './wholesalePresentation.mjs';
+import { wholesaleProductName, wholesaleProductDetail, wholesaleProductCollection } from './wholesalePresentation.mjs';
 
 type Selection = {id:string; quantity:string; unit:string};
 export function WholesaleCatalogue({onReview}:{onReview:(items:QuoteProduct[])=>void}) {
@@ -33,7 +33,7 @@ export function WholesaleCatalogue({onReview}:{onReview:(items:QuoteProduct[])=>
     <p className="catalogue-intro">Prices shown are iTop selling prices from the supplied WhatsApp catalogue, confirmed by the owner. iTop confirms current pricing, VAT treatment, pack quantities, compatibility and availability with your quote.</p>
     <div className="catalogue-layout"><div className="catalogue-results"><div className="catalogue-filters"><label>Search products<input type="search" value={search} onChange={e=>{setSearch(e.target.value);setLimit(12);}} placeholder="Product, code or device model" /></label><label>Category<select value={category} onChange={e=>{setCategory(e.target.value);setLimit(12);}}><option>All categories</option>{wholesaleCategories.map(item=><option key={item}>{item}</option>)}</select></label></div>
     <p className="catalogue-count" role="status">{products.length} products found{products.length>limit?' · showing '+limit:''}</p>
-    <div className="catalogue-grid">{products.slice(0,limit).map(product=><article className="catalogue-product" key={product.id}><CataloguePhoto product={product} /><p className="eyebrow">{product.collection}</p><h3>{wholesaleProductName(product)}</h3><p className="catalogue-price">£{(product.cataloguePricePence/100).toFixed(2)} <span>iTop selling price</span></p>{product.code && <p className="catalogue-code">Product code: <strong>{product.code}</strong></p>}{wholesaleProductDetail(product) && <p className="catalogue-detail">{wholesaleProductDetail(product)}</p>}<button className="button button-outline" type="button" disabled={selection.some(item=>item.id===product.id)||selection.length>=12} onClick={()=>add(product.id)} aria-label={(selection.some(item=>item.id===product.id)?'Added: ':'Add to quote: ')+wholesaleProductName(product)}>{selection.some(item=>item.id===product.id)?'Added to list':'Add to quote'}</button></article>)}</div>
+    <div className="catalogue-grid">{products.slice(0,limit).map(product=><article className="catalogue-product" key={product.id}><CataloguePhoto product={product} /><p className="eyebrow">{wholesaleProductCollection(product)}</p><h3>{wholesaleProductName(product)}</h3><p className="catalogue-price">£{(product.cataloguePricePence/100).toFixed(2)} <span>iTop selling price</span></p>{product.code && <p className="catalogue-code">Product code: <strong>{product.code}</strong></p>}{wholesaleProductDetail(product) && <p className="catalogue-detail">{wholesaleProductDetail(product)}</p>}<button className="button button-outline" type="button" disabled={selection.some(item=>item.id===product.id)||selection.length>=12} onClick={()=>add(product.id)} aria-label={(selection.some(item=>item.id===product.id)?'Added: ':'Add to quote: ')+wholesaleProductName(product)}>{selection.some(item=>item.id===product.id)?'Added to list':'Add to quote'}</button></article>)}</div>
     {!products.length && <div className="catalogue-empty"><h3>No matching products.</h3><p>Try a different code or model, or reset the filters. You can also describe an unlisted product in a quote request.</p><button className="text-button" type="button" onClick={()=>{setSearch('');setCategory('All categories');setLimit(12);}}>Reset filters</button></div>}
     {products.length>limit && <button className="button button-dark catalogue-more" type="button" onClick={()=>setLimit(previous=>previous+12)}>Show more products</button>}
     </div><aside className="catalogue-cart" aria-labelledby="quote-list-heading"><h3 id="quote-list-heading">Your quote list <span>({selection.length}/12)</span></h3><p className="catalogue-cart-note">Add products, adjust quantities, then review your request.</p><p className="catalogue-feedback" role="status">{status}</p><form onSubmit={review}>
@@ -45,6 +45,5 @@ export function WholesaleCatalogue({onReview}:{onReview:(items:QuoteProduct[])=>
 function CataloguePhoto({product}:{product:{name:string}}) {
   const photo = wholesaleStylePhoto(product);
   if (!photo) return null;
-  return <figure className={'catalogue-photo catalogue-photo-'+photo.style.toLowerCase()}><img src={siteHref(photo.path)} alt={photo.alt} loading="lazy" width={1290} height={1290} /><figcaption>Style photo · model cut-outs and colours may vary.</figcaption></figure>;
+  return <figure className={'catalogue-photo catalogue-photo-'+photo.style.toLowerCase()}><div className="catalogue-photo-window"><img src={siteHref(photo.path)} alt={photo.alt} loading="lazy" width={1290} height={1290} /></div><figcaption>{photo.caption}</figcaption></figure>;
 }
-

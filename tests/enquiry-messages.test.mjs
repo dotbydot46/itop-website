@@ -68,7 +68,7 @@ test('catalogue selection preserves item identity, code, variants and quantities
   assert.equal(product.cataloguePricePence,219);
   const items=catalogueQuoteItems([{id:product.id,quantity:'20',unit:'Items'}]);
   const message=wholesaleMessage(items,{Business:'Example shop'});
-  assert.match(message,/CS24B Charging Plug 25W — 20 items/);
+  assert.match(message,/CS24B charging plug 25W — 20 items/);
   assert.match(message,/Reference: CS24B/);
   assert.doesNotMatch(message,/£|Total:/);
   const valid={id:product.id,quantity:'1',unit:'Packs'};
@@ -107,4 +107,3 @@ test('remaining case import preserves price exceptions and network variants',asy
   assert.equal(find('A51 4G?5G?').detail,'Supplier label: A51 4G?5G?');
   assert.equal(filterWholesaleProducts('S26','Cases').filter(p=>p.name.startsWith('Shockproof Case')).length,3);
 });
-

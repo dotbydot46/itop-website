@@ -3,7 +3,7 @@
  * The owner confirmed screenshot amounts are iTop selling prices on 8 October 2026. VAT and item/pack basis require confirmation. No warranties, pack sizes or stock counts are inferred.
  * @type {{id:string,category:string,collection:string,name:string,code:string,detail:string,cataloguePricePence:number}[]}
  */
-import { wholesaleProductName, wholesaleProductDetail } from './wholesalePresentation.mjs';
+import { wholesaleProductName, wholesaleProductDetail, wholesaleProductCollection } from './wholesalePresentation.mjs';
 export const wholesaleProducts = [
   {
     "id": "wa-01-1",
@@ -2980,7 +2980,7 @@ export const wholesaleCategories = [...new Set(wholesaleProducts.map(item=>item.
 /** @param {string} search @param {string} category */
 export function filterWholesaleProducts(search, category='All categories') {
   const words=search.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  return wholesaleProducts.filter(item=>(category==='All categories'||item.category===category)&&words.every(word=>(item.name+' '+item.code+' '+item.detail+' '+item.collection).toLowerCase().includes(word)));
+  return wholesaleProducts.filter(item=>(category==='All categories'||item.category===category)&&words.every(word=>(item.name+' '+item.code+' '+item.detail+' '+item.collection+' '+wholesaleProductName(item)+' '+wholesaleProductCollection(item)).toLowerCase().includes(word)));
 }
 /** @param {{id:string,quantity:string,unit:string}[]} selection */
 export function catalogueQuoteItems(selection) {
@@ -2994,4 +2994,3 @@ export function catalogueQuoteItems(selection) {
     return {product:wholesaleProductName(product),sku:product.code,variant:wholesaleProductDetail(product),quantity:String(quantity),unit:row.unit};
   });
 }
-
