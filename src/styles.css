@@ -347,3 +347,40 @@ footer { flex-wrap:wrap; align-items:center; }
  .navigation a { font-size:16px; }
 }
 @media(max-width:720px) { .business-services { grid-template-columns:1fr; padding:0 24px 36px; } .business-services article { padding:26px; } .business-form { padding:24px; } .business-enquiry { gap:30px; } }
+
+/* Searchable wholesale catalogue and local quote selection. */
+.wholesale-hero h1 { font-size:clamp(54px,5.5vw,84px); }
+.wholesale-catalogue { padding:34px 3.85% 64px; scroll-margin-top:24px; }
+.catalogue-heading { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.catalogue-heading h2 { font-size:40px; line-height:1.1; letter-spacing:-.05em; margin-top:14px; }
+.catalogue-intro { color:var(--muted); font-size:16px; line-height:1.6; margin:18px 0 28px; }
+.catalogue-layout { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:28px; align-items:start; }
+.catalogue-results { min-width:0; }
+.catalogue-filters { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:20px; }
+.catalogue-count { font-size:14px; color:var(--muted); margin:0 0 20px; }
+.catalogue-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.catalogue-product { padding:26px; border:1px solid #dce1e4; display:flex; flex-direction:column; min-width:0; background:#fff; }
+.catalogue-product .eyebrow { line-height:1.5; }
+.catalogue-product h3 { font-size:22px; line-height:1.25; letter-spacing:-.035em; margin:18px 0 14px; overflow-wrap:anywhere; }
+.catalogue-code,.catalogue-detail { font-size:14px; line-height:1.6; color:var(--muted); margin-bottom:12px; overflow-wrap:anywhere; }
+.catalogue-product .button { margin-top:auto; align-self:flex-start; min-height:44px; padding:12px 18px; }
+.catalogue-cart { background:#eaf8ff; padding:26px; min-width:0; }
+.catalogue-cart h3 { font-size:24px; line-height:1.2; letter-spacing:-.03em; }
+.catalogue-cart h3 span { font-size:16px; color:var(--muted); }
+.catalogue-cart-note,.catalogue-empty-list { font-size:15px; line-height:1.6; color:var(--muted); margin:16px 0; }
+.catalogue-feedback { font-size:14px; line-height:1.5; margin-bottom:16px; }
+.catalogue-selection fieldset { min-width:0; border:0; border-top:1px solid #c7dce6; margin:0 0 22px; padding:18px 0 0; }
+.catalogue-selection legend { font-size:16px; font-weight:600; padding:0; line-height:1.5; overflow-wrap:anywhere; }
+.catalogue-selection .form-row { gap:12px; margin-top:12px; }
+.catalogue-selection .text-button { min-height:44px; }
+.catalogue-empty { background:#f3f5f6; padding:28px; }
+.catalogue-empty p { color:var(--muted); line-height:1.6; margin:16px 0; }
+.catalogue-more { margin-top:24px; }
+.catalogue-product button:disabled,.catalogue-cart button:disabled { cursor:default; opacity:.6; }
+@media(min-width:1550px) { .wholesale-catalogue { padding-left:max(3.85%,calc((100vw - 1450px)/2)); padding-right:max(3.85%,calc((100vw - 1450px)/2)); } }
+@media(max-width:1100px) { .catalogue-layout { grid-template-columns:minmax(0,1fr) 300px; gap:18px; } .catalogue-product { padding:20px; } }
+@media(max-width:900px) { .catalogue-layout { grid-template-columns:1fr; } .catalogue-cart { margin-top:20px; } }
+@media(max-width:720px) { .wholesale-catalogue { padding:24px 24px 40px; } .catalogue-heading h2 { font-size:34px; } .catalogue-filters { grid-template-columns:1fr; gap:0; } .catalogue-grid { grid-template-columns:1fr; } .catalogue-cart { padding:24px; } .catalogue-selection .form-row { grid-template-columns:1fr 1fr; } }
+
+.catalogue-price { font-size:23px; font-weight:700; margin:0 0 16px; }
+.catalogue-price span { font-size:13px; font-weight:400; color:var(--muted); display:block; margin-top:5px; }

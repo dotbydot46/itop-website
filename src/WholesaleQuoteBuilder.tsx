@@ -4,17 +4,18 @@ import { wholesaleDraftKey, encodeWholesaleDraft, decodeWholesaleDraft } from '.
 import { MessageReview } from './MessageReview';
 import { quoteErrors, wholesaleMessage } from './enquiryMessages.mjs';
 
+export type QuoteProduct = { product: string; sku: string; variant: string; quantity: string; unit: string };
 type Row = { id: number; product: string; sku: string; variant: string; quantity: string; unit: string };
 const emptyRow = (id: number): Row => ({ id, product: '', sku: '', variant: '', quantity: '1', unit: 'Items' });
 
-export function WholesaleQuoteBuilder() {
-  const [rows, setRows] = useState<Row[]>([emptyRow(1)]);
+export function WholesaleQuoteBuilder({ initialItems = [] }: { initialItems?: QuoteProduct[] }) {
+  const [rows, setRows] = useState<Row[]>(() => initialItems.length ? initialItems.slice(0,12).map((item,index)=>({...item,id:index+1})) : [emptyRow(1)]);
   const [details, setDetails] = useState<Record<string,string>>({ Name: '', Business: '', Fulfilment: 'Collection', Location: '', Needed: '', Notes: '' });
   const [review, setReview] = useState(false);
   const [error, setError] = useState('');
   const [savedList, setSavedList] = useState<ReturnType<typeof decodeWholesaleDraft>>(null);
   const [storageStatus, setStorageStatus] = useState('');
-  const nextId = useRef(2);
+  const nextId = useRef(Math.max(2,Math.min(initialItems.length,12)+1));
   useEffect(() => {
     try {
       const raw = localStorage.getItem(wholesaleDraftKey);

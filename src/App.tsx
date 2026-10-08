@@ -32,7 +32,7 @@ export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [enquiry, setEnquiry] = useState<Enquiry | null>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
-  function openEnquiry(kind: EnquiryKind | 'Choose' = 'Repair', category = '', issue?: string, phone?: Enquiry['phone']) { returnFocus.current = document.activeElement as HTMLElement; setMenuOpen(false); setEnquiry({ kind, category, issue, phone }); }
+  function openEnquiry(kind: EnquiryKind | 'Choose' = 'Repair', category = '', issue?: string, phone?: Enquiry['phone'], quoteItems?: Enquiry['quoteItems']) { returnFocus.current = document.activeElement as HTMLElement; setMenuOpen(false); setEnquiry({ kind, category, issue, phone, quoteItems }); }
   function closeEnquiry() { setEnquiry(null); requestAnimationFrame(() => returnFocus.current?.focus()); }
   function navClick() { setMenuOpen(false); }
   return <><a className="skip-link" href="#main">Skip to content</a><header className="header">

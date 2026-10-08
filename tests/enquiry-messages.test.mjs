@@ -55,3 +55,22 @@ test('business and trade requests keep their purpose and exclude unrelated field
   assert.doesNotMatch(trade,/Service:|Quantity:|Needed:/);
   assert.doesNotMatch(tradeApplicationMessage({Business:' Example ',Email:'   '}),/Email:/);
 });
+
+test('catalogue selection preserves item identity, code, variants and quantities', async()=>{
+  const {wholesaleProducts,filterWholesaleProducts,catalogueQuoteItems}=await import('../src/wholesaleCatalogue.mjs');
+  assert.equal(wholesaleProducts.length,90);
+  assert.equal(new Set(wholesaleProducts.map(p=>p.id)).size,90);
+  for(const p of wholesaleProducts) assert.ok(Number.isInteger(p.cataloguePricePence)&&p.cataloguePricePence>0);
+  assert.equal(filterWholesaleProducts('sc-x82','Cables & adapters').length,1);
+  assert.ok(filterWholesaleProducts('17 pro','Cases').some(item=>item.name==='Blurred Case — 17 / 18 Pro Max'));
+  assert.equal(filterWholesaleProducts('no matching product','All categories').length,0);
+  const product=filterWholesaleProducts('cs24b','Power')[0];
+  assert.equal(product.cataloguePricePence,219);
+  const items=catalogueQuoteItems([{id:product.id,quantity:'20',unit:'Items'}]);
+  const message=wholesaleMessage(items,{Business:'Example shop'});
+  assert.match(message,/CS24B Charging Plug 25W — 20 items/);
+  assert.match(message,/Reference: CS24B/);
+  assert.doesNotMatch(message,/£|Total:/);
+  const valid={id:product.id,quantity:'1',unit:'Packs'};
+  for(const invalid of [[],Array(13).fill(valid),[valid,valid],[{...valid,id:'not-a-product'}],[{...valid,quantity:'0'}],[{...valid,quantity:'1.5'}],[{...valid,quantity:'10001'}],[{...valid,unit:'Unknown'}]]) assert.throws(()=>catalogueQuoteItems(invalid));
+});

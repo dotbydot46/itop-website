@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { X } from '@phosphor-icons/react';
 import { RepairEnquiryFlow } from './RepairEnquiryFlow';
-import { WholesaleQuoteBuilder } from './WholesaleQuoteBuilder';
+import { WholesaleQuoteBuilder, type QuoteProduct } from './WholesaleQuoteBuilder';
 import { siteHref } from './sitePaths';
 import { MessageReview } from './MessageReview';
 
 export type EnquiryKind = 'Repair' | 'Accessories' | 'Trade' | 'Buy / sell' | 'Support';
 export type RepairPhone = { brand:string; model:string };
-export type Enquiry = { kind: EnquiryKind | 'Choose'; category: string; issue?: string; phone?: RepairPhone };
+export type Enquiry = { kind: EnquiryKind | 'Choose'; category: string; issue?: string; phone?: RepairPhone; quoteItems?: QuoteProduct[] };
 const choices: { kind: EnquiryKind; title: string; description: string }[] = [
   { kind: 'Repair', title: 'Repair a device', description: 'Phone, tablet, laptop or gadget faults.' },
   { kind: 'Accessories', title: 'Find an accessory', description: 'Compatibility, colours and availability.' },
@@ -16,7 +16,7 @@ const choices: { kind: EnquiryKind; title: string; description: string }[] = [
   { kind: 'Support', title: 'Aftercare or setup', description: 'Warranty questions, network messages and device help.' },
 ];
 
-export function EnquiryDialog({ kind: initialKind, category, issue, phone, onClose }: Enquiry & { onClose: () => void }) {
+export function EnquiryDialog({ kind: initialKind, category, issue, phone, quoteItems, onClose }: Enquiry & { onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [kind, setKind] = useState(initialKind);
@@ -25,7 +25,7 @@ export function EnquiryDialog({ kind: initialKind, category, issue, phone, onClo
   return <dialog ref={dialogRef} className="enquiry-dialog" aria-labelledby="dialog-title" onCancel={onClose} onClick={e => { if (e.target === e.currentTarget) onClose(); }}><div className="dialog-inner">
     <div className="dialog-top"><span className="eyebrow">LET’S TALK TECH</span><button className="icon-button" aria-label="Close enquiry" onClick={onClose}><X size={24} /></button></div>
     <h2 id="dialog-title" ref={headingRef} tabIndex={-1}>{kind === 'Choose' ? 'How can we help?' : (kind === 'Trade' ? 'Wholesale' : kind) + ' enquiry.'}</h2>
-    {kind === 'Choose' ? <div className="enquiry-choices">{choices.map(choice => <button key={choice.kind} onClick={() => setKind(choice.kind)}><strong>{choice.title}</strong><span>{choice.description}</span></button>)}<a className="business-choice" href={siteHref('business/')}><strong>iTop for Business</strong><span>Repairs, devices and accessories for your team.</span></a></div> : kind === 'Repair' ? <RepairEnquiryFlow issue={issue} phone={phone} /> : kind === 'Trade' ? <WholesaleQuoteBuilder /> : <BasicEnquiryForm kind={kind} category={category} />}
+    {kind === 'Choose' ? <div className="enquiry-choices">{choices.map(choice => <button key={choice.kind} onClick={() => setKind(choice.kind)}><strong>{choice.title}</strong><span>{choice.description}</span></button>)}<a className="business-choice" href={siteHref('business/')}><strong>iTop for Business</strong><span>Repairs, devices and accessories for your team.</span></a></div> : kind === 'Repair' ? <RepairEnquiryFlow issue={issue} phone={phone} /> : kind === 'Trade' ? <WholesaleQuoteBuilder initialItems={quoteItems} /> : <BasicEnquiryForm kind={kind} category={category} />}
   </div></dialog>;
 }
 
