@@ -8,8 +8,8 @@ const stylePhotos = {
   Bracket: 'bracket.jpeg',
   Blurred: 'blurred.jpeg',
   Shiny: 'shiny.jpeg',
-  Thin: 'thin-screenshot.jpeg',
-  'Packaged Magnetic': 'packaged-screenshot.jpeg',
+  Thin: 'csv-235f757a373683a3.jpeg',
+  'Packaged Magnetic': 'csv-f7565a23c0f833b9.jpeg',
 };
 
 /** @param {{id?:string,name:string}} product */

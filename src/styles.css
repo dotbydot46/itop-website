@@ -390,7 +390,5 @@ footer { flex-wrap:wrap; align-items:center; }
 .catalogue-photo-blurred img { object-position:center 47.7%; }
 .catalogue-photo-shiny img { object-position:center 22.5%; }
 .catalogue-photo-window { position:relative; aspect-ratio:1; overflow:hidden; }
-.catalogue-photo-thin img, .catalogue-photo-packaged img { position:absolute; max-width:none; width:536.93%; height:1163.64%; aspect-ratio:auto; object-fit:fill; left:-19.89%; }
-.catalogue-photo-thin img { top:-132.95%; }
-.catalogue-photo-packaged img { top:-831.25%; }
+.catalogue-photo-catalogue img, .catalogue-photo-thin img, .catalogue-photo-packaged img { object-fit:contain; background:#fff; }
 .catalogue-photo figcaption { font-size:12px; line-height:1.5; color:var(--muted); margin-top:8px; }
