@@ -1,4 +1,4 @@
-import { WholesaleCatalogue } from './WholesaleCatalogue';
+import { WholesaleCatalogue } from './WholesaleCatalogue.tsx';
 import type { QuoteProduct } from './WholesaleQuoteBuilder';
 import { wholesaleCatalogueUrl } from './wholesaleContact';
 import { siteHref } from './sitePaths';
@@ -33,4 +33,5 @@ export function BuySellPage({ onEnquire }: Props) {
     <section className="content-section"><div><p className="eyebrow">BEFORE YOUR VISIT</p><h2>Know your device.<br />Protect your data.</h2></div><div className="service-notes"><p>Back up your personal files before selling. Bring the device and any relevant accessories or proof of ownership.</p><ul><li>Tell us about damage, battery problems or repairs.</li><li>Ask the team about account and activation locks.</li><li>Discuss reset steps in-store once you agree to sell.</li><li>Never share account passwords or passcodes in your enquiry.</li></ul><a className="text-button" href={siteHref('contact/')}>Visit & Contact</a></div></section>
   </>;
 }
+
 

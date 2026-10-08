@@ -38,3 +38,8 @@ Most shockproof cases are £1.29; A14 is £1.28. Most colourful cases are £1.79
 The owner explicitly approved shared general style photos across model listings, as in the WhatsApp catalogue. Latest full photos map to frame (clear backs on wooden table), fashion/quality (four solid colour cases on grey background), colourful (two rows on wooden table), shockproof (clear case in packaging) and bracket (cases with fold-out stands on grey table). Prior full photos cover blurred and shiny. Thin currently has a shared screenshot thumbnail. Shared photos illustrate style; exact camera cut-outs and colours depend on the chosen model.
 
 Photo bytes are unavailable while the workspace is disconnected. No image assets or fabricated image URLs were added in this batch. Install supplied originals by style when file access resumes; user approval for this reuse is already recorded.
+
+## Shared style photos installed — 8 October 2026
+
+Six supplied JPEG originals are now stored unchanged in public/images/wholesale: frame (16.17.00 (1)), fashion (16.17.00 (2)), colourful (16.17.00 (3)), shockproof (16.17.00 (4)), bracket (16.17.00 (5)) and blurred (16.17.01 (4)). All filenames originated as WhatsApp Image 2026-10-08 at [time].jpeg. Map by product style rather than collection because fashion collections include colourful listings. The shared photos illustrate style, not exact model fit or colour availability. The blurred screenshot uses a square display crop so its controls and embedded reference price are omitted; its original bytes remain intact. Other styles have no matching photo in this six-file batch. The catalogue data and owner-confirmed selling prices are unchanged.
+

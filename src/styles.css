@@ -384,3 +384,9 @@ footer { flex-wrap:wrap; align-items:center; }
 
 .catalogue-price { font-size:23px; font-weight:700; margin:0 0 16px; }
 .catalogue-price span { font-size:13px; font-weight:400; color:var(--muted); display:block; margin-top:5px; }
+
+.catalogue-photo { margin:0 0 20px; }
+.catalogue-photo img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:cover; background:#f3f5f6; }
+.catalogue-photo-blurred img { object-position:center 47.7%; }
+.catalogue-photo figcaption { font-size:12px; line-height:1.5; color:var(--muted); margin-top:8px; }
+
