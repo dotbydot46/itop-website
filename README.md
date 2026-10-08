@@ -39,7 +39,7 @@ There is no checkout, booking confirmation, database, stock feed or message send
 
 `src/App.tsx` holds content and interactions; `src/styles.css` holds the design; `public/assets` holds images. Read [LEARNING.md](LEARNING.md) for short explanations and exercises, and [business-info.md](docs/business-info.md) for research and confirmation gaps.
 
-GitHub stores the source and change history. Sites hosts the preview. A GitHub commit does **not** automatically update Sites: publish the verified build separately. Do not change the hosting project identity when updating the existing preview. GitHub Pages is not configured for this repository; the Vite build and subpath assets would need a separate setup before enabling it.
+GitHub stores the source and change history. Sites hosts the preview. A GitHub commit does **not** automatically update Sites: publish the verified build separately. Do not change the hosting project identity when updating the existing preview. GitHub Pages publishes the compiled website automatically after pushes to `main` using `.github/workflows/pages.yml`. Its separate `npm run build:pages` command builds for `/itop-website/` and creates a direct Repairs page. Shared links and image paths adapt to each hosting target. The public website is https://dotbydot46.github.io/itop-website/.
 
 ## Images and business claims
 

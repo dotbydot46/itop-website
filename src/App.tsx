@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { List, MagnifyingGlass, X, Phone, MapPin, CheckCircle, WhatsappLogo } from '@phosphor-icons/react';
 import { RepairsPage } from './RepairsPage';
+import { siteHref, siteRoute } from './sitePaths';
 type EnquiryKind = 'Repair' | 'Accessories' | 'Trade' | 'Buy / sell';
 type Product = { title: string; description: string; image: string };
 const products: Product[] = [
-  { title: 'Protection', description: 'Cases, screen protectors and everyday essentials to keep your devices safe.', image: '/assets/protection.png' },
-  { title: 'Power', description: 'Chargers, cables and accessories to keep you connected at home, at work and on the go.', image: '/assets/power.png' },
-  { title: 'Audio', description: 'Headphones, earphones and audio accessories for work, travel and everyday listening.', image: '/assets/audio.png' },
+  { title: 'Protection', description: 'Cases, screen protectors and everyday essentials to keep your devices safe.', image: siteHref('assets/protection.png') },
+  { title: 'Power', description: 'Chargers, cables and accessories to keep you connected at home, at work and on the go.', image: siteHref('assets/power.png') },
+  { title: 'Audio', description: 'Headphones, earphones and audio accessories for work, travel and everyday listening.', image: siteHref('assets/audio.png') },
 ];
 const phone = '+447760616466';
 const waBase = 'https://wa.me/447760616466';
@@ -40,7 +41,7 @@ function EnquiryDialog({ kind, category, issue, onClose }: { kind: EnquiryKind; 
   </div></dialog>;
 }
 export function App() {
-  const isRepairsPage = window.location.pathname.replace(/\/$/, '') === '/repairs';
+  const isRepairsPage = siteRoute(window.location.pathname) === 'repairs';
   useEffect(() => {
     document.title = isRepairsPage ? 'iTop Repairs | iPhone & Samsung enquiries in Catford' : 'iTop Catford | Repairs, Accessories & Wholesale';
     document.querySelector('meta[name="description"]')?.setAttribute('content', isRepairsPage ? 'Ask iTop in Catford about iPhone and Samsung screen, battery, charging and diagnostic repairs. Price, parts, time and warranty confirmed before work starts.' : 'iTop Catford: phone repairs, accessories, wholesale and buy/sell enquiries at 160 Rushey Green.');
@@ -52,8 +53,8 @@ export function App() {
   function closeEnquiry() { setEnquiry(null); requestAnimationFrame(() => returnFocus.current?.focus()); }
   function navClick() { setMenuOpen(false); }
   return <><a className="skip-link" href="#main">Skip to content</a><header className="header">
-    <a className="brand" href="/" aria-label="iTop home"><img src="/assets/itop-logo.png" alt="iTop Wholesale & Retail" /></a>
-    <nav id="mobile-navigation" className={`navigation ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation"><a href="/repairs" aria-current={isRepairsPage ? 'page' : undefined} onClick={navClick}>Repairs</a><a href="/#accessories" onClick={navClick}>Accessories</a><a href="/#trade" onClick={navClick}>Trade</a><a href="/#visit" onClick={navClick}>Visit</a></nav>
+    <a className="brand" href={siteHref()} aria-label="iTop home"><img src={siteHref('assets/itop-logo.png')} alt="iTop Wholesale & Retail" /></a>
+    <nav id="mobile-navigation" className={`navigation ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation"><a href={siteHref('repairs/')} aria-current={isRepairsPage ? 'page' : undefined} onClick={navClick}>Repairs</a><a href={siteHref('#accessories')} onClick={navClick}>Accessories</a><a href={siteHref('#trade')} onClick={navClick}>Trade</a><a href={siteHref('#visit')} onClick={navClick}>Visit</a></nav>
     <button className="ask-button" aria-label="Ask iTop" onClick={() => openEnquiry()}><MagnifyingGlass size={24} weight="light" /><span>Ask iTop</span></button><button className="menu-button icon-button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={26} /> : <List size={26} />}</button>
   </header><main id="main">
     {isRepairsPage ? <RepairsPage onEnquire={issue => openEnquiry('Repair', '', issue)} /> : <><section className="hero" aria-labelledby="hero-title"><h1 id="hero-title">Repair it.<br />Make it yours<span>.</span></h1><div className="hero-copy"><p>Phone and tech repairs, quality accessories,<br className="desktop-break" /> wholesale supply and buy/sell at<br className="desktop-break" /> 160 Rushey Green, Catford SE6.</p><button className="button button-dark" onClick={() => openEnquiry()}>Get a repair quote</button></div></section>

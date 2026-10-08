@@ -1,4 +1,5 @@
 import { DeviceMobile, BatteryCharging, Plug, Drop, Camera, Question, ArrowUpRight } from '@phosphor-icons/react';
+import { siteHref } from './sitePaths';
 
 const repairs = [
   { title: 'Screen replacement', issue: 'Screen replacement', description: 'Cracked glass, lines on the display, a black screen or touch that no longer responds.', icon: DeviceMobile },
@@ -36,6 +37,6 @@ export function RepairsPage({ onEnquire }: { onEnquire: (issue?: string) => void
         <details><summary>Do you repair other devices?</summary><p>Ask about your tablet, laptop or other device and include the exact model. iTop will confirm whether the repair and suitable parts are available.</p></details>
       </div>
     </section>
-    <section className="content-section repair-visit" aria-labelledby="repair-visit-title"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2 id="repair-visit-title">Let’s look<br />at your options.</h2></div><div><p className="repair-visit-copy">Send your model and fault before visiting iTop in Catford. We’ll discuss availability, pricing and the next step.</p><div className="visit-actions"><button className="button button-dark" onClick={() => onEnquire()}>Prepare an enquiry</button><a className="text-button" href="/#visit">Visit details</a></div></div></section>
+    <section className="content-section repair-visit" aria-labelledby="repair-visit-title"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2 id="repair-visit-title">Let’s look<br />at your options.</h2></div><div><p className="repair-visit-copy">Send your model and fault before visiting iTop in Catford. We’ll discuss availability, pricing and the next step.</p><div className="visit-actions"><button className="button button-dark" onClick={() => onEnquire()}>Prepare an enquiry</button><a className="text-button" href={siteHref('#visit')}>Visit details</a></div></div></section>
   </>;
 }
