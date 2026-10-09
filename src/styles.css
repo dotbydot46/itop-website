@@ -466,3 +466,19 @@ footer { flex-wrap:wrap; align-items:center; }
   .contact-help .button { width:100%; }
 }
 
+/* Whole-site audit: keyboard, motion and mobile quote access. */
+.catalogue-quick-list { display:none; }
+.catalogue-cart { scroll-margin-top:24px; }
+.catalogue-keep-browsing { min-height:44px; margin-top:14px; }
+.catalogue-product button[aria-disabled="true"] { opacity:.55; cursor:default; }
+.trade-form-container { padding:0; background:transparent; }
+#trade-request { scroll-margin-top:24px; }
+@media(max-width:720px) {
+  .catalogue-quick-list { display:flex; position:fixed; z-index:4; left:0; right:0; bottom:0; padding:12px 24px calc(12px + env(safe-area-inset-bottom)); background:white; border-top:1px solid #d7dade; }
+  .catalogue-quick-list .button { width:100%; }
+  body:has(.catalogue-quick-list) footer { padding-bottom:110px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
+.dialog-top { position:sticky; top:0; z-index:2; background:white; padding:8px 0; }
+body:has(.enquiry-dialog[open]) { overflow:hidden; }
+
