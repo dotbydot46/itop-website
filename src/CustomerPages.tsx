@@ -1,16 +1,16 @@
-import { StoreDetails } from './StoreDetails';
+import { StoreDetails, shopDirections } from './StoreDetails';
 import { siteHref } from './sitePaths';
 import type { EnquiryKind } from './EnquiryDialog';
 
 type Props = { onEnquire: (kind: EnquiryKind | 'Choose', category?: string) => void };
 
 export function ContactPage({ onEnquire }: Props) {
-  return <><section className="hero repairs-hero"><div><p className="eyebrow">ITOP / CONTACT / CATFORD</p><h1>Come by.<br />Say hello<span>.</span></h1></div><div className="hero-copy"><p>Find the shop, check opening hours or contact iTop about your device.</p><button className="button button-dark" onClick={() => onEnquire('Choose')}>Choose an enquiry</button></div></section>
-
-    <section className="visit-section content-section" id="visit"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2>Find us<br />in Catford.</h2><p className="visit-note">Check parts and availability before travelling.</p><a className="text-button support-note" href={siteHref('support/')}>Warranty & aftercare</a></div><StoreDetails /></section>
-
+  return <><section className="hero repairs-hero contact-hero"><div><p className="eyebrow">ITOP / CONTACT / CATFORD</p><h1>Come by.<br />Say hello<span>.</span></h1></div><div className="hero-copy"><p>Find the shop, check opening hours or contact iTop about your device.</p><nav className="contact-actions" aria-label="Contact the shop"><a className="button button-dark" href="tel:+447760616466">Call iTop</a><a className="button button-outline" href="https://wa.me/447760616466" target="_blank" rel="noopener noreferrer">WhatsApp iTop</a><a className="text-button" href={shopDirections} target="_blank" rel="noopener noreferrer">Get directions</a><a className="text-button" href="#shop-hours">Opening hours</a></nav><p className="contact-phone">07760 616 466 · Retail, repairs & aftercare</p></div></section>
+    <section className="visit-section content-section contact-visit" id="visit"><div><p className="eyebrow">160 RUSHEY GREEN / SE6 4HQ</p><h2>Find us<br />in Catford.</h2><p className="visit-note">Check parts and availability before travelling.</p><a className="text-button support-note" href={siteHref('support/')}>Warranty & aftercare</a></div><StoreDetails /></section>
+    <section className="content-section contact-help" aria-labelledby="contact-help-title"><div><p className="eyebrow">SEND THE RIGHT DETAILS</p><h2 id="contact-help-title">How can<br />we help?</h2></div><div><p>For a repair or product enquiry, choose what you need and review your message before opening WhatsApp.</p><button className="button button-dark" onClick={() => onEnquire('Choose')}>Choose an enquiry</button><div className="contact-wholesale"><h3>Buying stock for resale?</h3><p>Use the wholesale catalogue and quote builder to send product names, models and quantities to the trade team.</p><a className="text-button" href={siteHref('wholesale/')}>Wholesale catalogue & quotes</a></div></div></section>
   </>;
 }
+
 
 export function SupportPage({ onEnquire }: Props) {
   return <><section className="hero repairs-hero"><div><p className="eyebrow">ITOP / WARRANTY & AFTERCARE</p><h1>Good questions.<br />Clear answers<span>.</span></h1></div><div className="hero-copy"><p>Understand the repair or product before you agree. Ask iTop to confirm the exact price, parts and cover for your device.</p><button className="button button-dark" onClick={() => onEnquire('Support', 'Warranty / aftercare')}>Ask about aftercare</button></div></section>
@@ -28,3 +28,5 @@ export function SupportPage({ onEnquire }: Props) {
     <section className="content-section repair-visit"><div><p className="eyebrow">SETUP & NETWORK ENQUIRIES</p><h2>Tell us what<br />the device says.</h2></div><div><p className="repair-visit-copy">Ask about SIM or network messages, device setup or recovery guidance. Ownership and eligibility are checked before a service is agreed.</p><div className="visit-actions"><button className="button button-dark" onClick={() => onEnquire('Support', 'Network / SIM')}>Ask about setup or network</button><a className="text-button" href={siteHref('contact/')}>Visit & Contact</a></div></div></section>
   </>;
 }
+
+

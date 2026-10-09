@@ -437,3 +437,31 @@ footer { flex-wrap:wrap; align-items:center; }
 .business-requirements legend { font-size:16px; font-weight:700; padding:0 12px 0 0; }
 .business-field-help { color:var(--muted); font-size:13px; line-height:1.5; margin:-8px 0 20px; }
 @media(max-width:720px) { .business-shortcuts { display:flex; flex-wrap:wrap; gap:8px; padding:0 24px 24px; } .business-shortcuts button { background:white; border:1px solid #c4c9ce; color:#007eb1; padding:10px 12px; min-height:44px; font-size:14px; font-weight:600; } .business-shortcuts button:hover { border-color:#007eb1; } .business-quote-section .business-form,.business-quote-section .business-brief { grid-column:1; grid-row:auto; } }
+
+/* Contact actions and clearly labelled visit details. */
+.contact-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px; }
+.contact-actions .button { padding:16px 12px; text-align:center; }
+.contact-actions .button-outline { border:1px solid var(--ink); }
+.contact-actions .text-button { min-height:44px; display:flex; align-items:center; }
+.contact-hero .contact-phone { font-size:14px; line-height:1.6; margin:18px 0 0; }
+.contact-details { min-width:0; }
+.contact-details section + section { border-top:1px solid #d7dade; margin-top:28px; padding-top:28px; }
+.contact-details h3,.contact-wholesale h3 { font-size:22px; line-height:1.3; letter-spacing:-.03em; margin:0 0 14px; }
+.contact-details address { font-style:normal; line-height:1.7; margin-bottom:16px; }
+.contact-details .hours-table { margin-top:0; max-width:none; }
+.contact-details .hours { font-size:14px; color:var(--muted); line-height:1.6; margin:14px 0 0; }
+.contact-details #shop-hours { scroll-margin-top:30px; }
+.contact-links { display:flex; flex-direction:column; align-items:flex-start; gap:4px; margin-top:12px; }
+.contact-links a { display:flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:4px; overflow-wrap:anywhere; max-width:100%; }
+.contact-help > div > p,.contact-wholesale p { color:var(--muted); line-height:1.7; margin-bottom:24px; max-width:540px; }
+.contact-wholesale { border-top:1px solid #d7dade; margin-top:30px; padding-top:28px; }
+.contact-wholesale .text-button { min-height:44px; display:inline-flex; align-items:center; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media(max-width:720px) {
+  .contact-visit { gap:28px; }
+  .contact-actions { gap:10px 16px; }
+  .contact-actions .button { font-size:14px; }
+  .contact-details .visit-actions { gap:14px 24px; }
+  .contact-details .visit-actions a { min-height:44px; display:inline-flex; align-items:center; }
+  .contact-help .button { width:100%; }
+}
