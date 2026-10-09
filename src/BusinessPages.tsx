@@ -4,6 +4,7 @@ import { MessageReview } from './MessageReview';
 import { businessMessage, tradeApplicationMessage } from './businessMessages.mjs';
 import { siteHref } from './sitePaths';
 import { wholesaleWhatsAppNumber } from './wholesaleContact';
+import { BusinessEnquiryForm } from './BusinessEnquiryForm';
 
 const services = [
   { name: 'Device repairs', icon: DeviceMobile, description: 'Help with phones, tablets or laptops used by your team. Include the models, faults and number of devices.' },
@@ -11,12 +12,13 @@ const services = [
   { name: 'Bulk accessories', icon: Headphones, description: 'Cases, protection, charging or audio for staff devices. Include model compatibility and quantities.' },
 ];
 export function BusinessPage() {
-  const [service, setService] = useState('Device repairs');
-  const formRef = useRef<HTMLSelectElement>(null);
-  function choose(value: string) { setService(value); formRef.current?.focus(); formRef.current?.scrollIntoView({ behavior: 'auto', block: 'center' }); }
-  return <><section className="hero repairs-hero business-hero"><div><p className="eyebrow">ITOP / FOR BUSINESS</p><h1>Your team.<br />Their tech<span>.</span></h1></div><div className="hero-copy"><p>One place to discuss repairs, replacement devices and accessories for your business.</p><a className="button button-dark" href="#business-enquiry">Request a business quote</a><p className="secondary-copy">Buying stock for resale? <a href={siteHref('wholesale/')}>Visit Wholesale</a>.</p></div></section>
+  const [service, setService] = useState('');
+  const formRef = useRef<HTMLDivElement>(null);
+  function choose(value: string) { setService(value); formRef.current?.focus({ preventScroll: true }); formRef.current?.scrollIntoView({ behavior: 'auto', block: 'start' }); }
+  return <><section className="hero repairs-hero business-hero"><div><p className="eyebrow">ITOP / FOR BUSINESS</p><h1>Your team.<br />Their tech<span>.</span></h1></div><div className="hero-copy"><p>One place to discuss repairs, replacement devices and accessories for your business.</p><a className="button button-dark" href="#business-request" onClick={event => { event.preventDefault(); choose(service); }}>Request a business quote</a><p className="secondary-copy">Buying stock for resale? <a href={siteHref('wholesale/')}>Visit Wholesale</a>.</p></div></section>
+    <nav className="business-shortcuts" aria-label="Choose a business service">{services.map(item => <button key={item.name} onClick={() => choose(item.name)}>{item.name}</button>)}</nav>
     <section className="business-services" aria-label="Business enquiry options">{services.map(({ icon: Icon, ...item },index) => <article key={item.name}><div className="business-card-top"><Icon size={30} weight="light" aria-hidden="true" /><span className="eyebrow">0{index + 1}</span></div><h2>{item.name}</h2><p>{item.description}</p><button className="text-button" onClick={() => choose(item.name)}>Discuss {item.name.toLowerCase()}</button></article>)}</section>
-    <section className="content-section business-enquiry" id="business-enquiry" aria-labelledby="business-enquiry-title"><div><p className="eyebrow">START WITH YOUR REQUIREMENTS</p><h2 id="business-enquiry-title">A clear brief.<br />A useful reply.</h2><p className="visit-note">Share the devices, quantities and help you need. iTop will discuss availability, pricing and timing before anything is agreed.</p><div className="business-next"><strong>What happens next?</strong><ol><li>Review your enquiry.</li><li>Choose whether to send it through WhatsApp.</li><li>Discuss a quote and the next steps with iTop.</li></ol></div></div><ContactRequestForm kind="business" service={service} onServiceChange={setService} serviceRef={formRef} /></section>
+    <section className="content-section business-enquiry business-quote-section" id="business-enquiry" aria-labelledby="business-enquiry-title"><BusinessEnquiryForm service={service} onServiceChange={setService} formRef={formRef} /><div className="business-brief"><p className="eyebrow">START WITH YOUR REQUIREMENTS</p><h2 id="business-enquiry-title">A clear brief.<br />A useful reply.</h2><p className="visit-note">Share the devices, quantities and help you need. iTop will discuss availability, pricing and timing before anything is agreed.</p><div className="business-next"><strong>What happens next?</strong><ol><li>Review your enquiry.</li><li>Choose whether to send it through WhatsApp.</li><li>Discuss a quote and the next steps with iTop.</li></ol></div></div></section>
   </>;
 }
 export function TradeApplicationPage() {

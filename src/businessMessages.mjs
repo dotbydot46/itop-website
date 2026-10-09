@@ -4,7 +4,9 @@ function requestMessage(data, intro, keys) {
 }
 /** @param {Record<string,string>} data */
 export function businessMessage(data) {
-  return requestMessage(data, 'Hi iTop, I’d like a quote for my business.', ['Service','Business','Name','Email','Quantity','Needed','Details']);
+  const serviceKeys = data.Service === 'Replacement devices' ? ['Models', 'Storage', 'Budget'] : data.Service === 'Bulk accessories' ? ['Accessory', 'Models'] : ['Models'];
+  const values = { ...data, ...(data.Service === 'Replacement devices' && data.Budget?.trim() ? { Budget: '£' + data.Budget.trim() + ' per device' } : {}) };
+  return requestMessage(values, 'Hi iTop, I’d like a quote for my business.', ['Service','Business','Name','Email','Quantity','Needed', ...serviceKeys, 'Details']);
 }
 /** @param {Record<string,string>} data */
 export function tradeApplicationMessage(data) {

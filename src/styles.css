@@ -428,3 +428,12 @@ footer { flex-wrap:wrap; align-items:center; }
 .device-model-help p { line-height:1.6; margin:8px 0; }
 .device-switch-intent { margin-top:20px; min-height:44px; }
 @media(max-width:720px) { .device-hero-actions { flex-direction:column; align-items:stretch; max-width:340px; } }
+
+/* Team enquiries: direct form entry and service-specific requirements. */
+.business-shortcuts { display:none; }
+.business-quote-section .business-form { grid-column:2; grid-row:1; scroll-margin-top:24px; }
+.business-quote-section .business-brief { grid-column:1; grid-row:1; }
+.business-requirements { border:0; border-top:1px solid #d8dce0; padding:22px 0 0; margin:10px 0 0; min-width:0; }
+.business-requirements legend { font-size:16px; font-weight:700; padding:0 12px 0 0; }
+.business-field-help { color:var(--muted); font-size:13px; line-height:1.5; margin:-8px 0 20px; }
+@media(max-width:720px) { .business-shortcuts { display:flex; flex-wrap:wrap; gap:8px; padding:0 24px 24px; } .business-shortcuts button { background:white; border:1px solid #c4c9ce; color:#007eb1; padding:10px 12px; min-height:44px; font-size:14px; font-weight:600; } .business-shortcuts button:hover { border-color:#007eb1; } .business-quote-section .business-form,.business-quote-section .business-brief { grid-column:1; grid-row:auto; } }

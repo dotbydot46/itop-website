@@ -56,6 +56,23 @@ test('business and trade requests keep their purpose and exclude unrelated field
   assert.doesNotMatch(tradeApplicationMessage({Business:' Example ',Email:'   '}),/Email:/);
 });
 
+test('business messages only include requirements for the selected service', async () => {
+  const { businessMessage } = await import('../src/businessMessages.mjs');
+  const data = { Models: 'iPhone 14', Storage: '128GB', Budget: '250', Accessory: 'Cases', Details: 'Team requirements' };
+  const replacement = businessMessage({ ...data, Service: 'Replacement devices' });
+  assert.match(replacement, /Storage: 128GB/);
+  assert.match(replacement, /Budget: £250 per device/);
+  assert.doesNotMatch(replacement, /Accessory:|Cases/);
+  const accessories = businessMessage({ ...data, Service: 'Bulk accessories' });
+  assert.match(accessories, /Accessory: Cases/);
+  assert.doesNotMatch(accessories, /Storage:|Budget:/);
+  for (const Service of ['Device repairs', 'More than one service']) {
+    const message = businessMessage({ ...data, Service });
+    assert.match(message, /Models: iPhone 14/);
+    assert.doesNotMatch(message, /Storage:|Budget:|Accessory:/);
+  }
+});
+
 test('catalogue selection preserves item identity, code, variants and quantities', async()=>{
   const {wholesaleProducts,filterWholesaleProducts,catalogueQuoteItems}=await import('../src/wholesaleCatalogue.mjs');
   assert.equal(wholesaleProducts.length,330);
