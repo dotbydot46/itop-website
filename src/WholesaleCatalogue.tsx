@@ -5,17 +5,26 @@ import { wholesaleCatalogueUrl } from './wholesaleContact';
 
 import { wholesaleStylePhoto } from './wholesalePhotos.mjs';
 import { siteHref } from './sitePaths';
-import { wholesaleProductName, wholesaleProductDetail, wholesaleProductCollection } from './wholesalePresentation.mjs';
+import { wholesaleProductName, wholesaleProductDetail } from './wholesalePresentation.mjs';
+import { browseCatalogue, catalogueCategoryLabels, catalogueProductType, catalogueCaseModel } from './wholesaleBrowsing.mjs';
 
 type Selection = {id:string; quantity:string; unit:string};
 export function WholesaleCatalogue({onReview}:{onReview:(items:QuoteProduct[])=>void}) {
   const [search,setSearch]=useState('');
   const [category,setCategory]=useState('All categories');
+  const [type,setType]=useState('');
+  const [model,setModel]=useState('');
+  const [sort,setSort]=useState('catalogue');
   const [limit,setLimit]=useState(12);
   const [selection,setSelection]=useState<Selection[]>([]);
   const [status,setStatus]=useState('');
   const [error,setError]=useState('');
-  const products=filterWholesaleProducts(search,category);
+  const products=browseCatalogue({search,category,type,model,sort});
+  const categoryProducts=filterWholesaleProducts('',category);
+  const types=[...new Set(categoryProducts.map(catalogueProductType))].sort();
+  const models=[...new Set(categoryProducts.filter(item=>!type||catalogueProductType(item)===type).map(catalogueCaseModel).filter(Boolean))].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+  function changeCategory(value:string) {setCategory(value);setType('');setModel('');setLimit(12);}
+  function resetFilters() {setSearch('');changeCategory('All categories');setSort('catalogue');}
   function add(id:string) {
     const product=wholesaleProducts.find(item=>item.id===id);
     if (!product || selection.some(item=>item.id===id)) return;
@@ -31,10 +40,13 @@ export function WholesaleCatalogue({onReview}:{onReview:(items:QuoteProduct[])=>
   return <section className="wholesale-catalogue" id="wholesale-catalogue" aria-labelledby="catalogue-heading">
     <div className="catalogue-heading"><div><p className="eyebrow">PRODUCT CATALOGUE</p><h2 id="catalogue-heading">Find it. List it.</h2></div><a className="text-button" href={wholesaleCatalogueUrl} target="_blank" rel="noopener noreferrer">View photos & prices on WhatsApp</a></div>
     <p className="catalogue-intro">Prices shown are iTop selling prices from the supplied WhatsApp catalogue, confirmed by the owner. iTop confirms current pricing, VAT treatment, pack quantities, compatibility and availability with your quote.</p>
-    <div className="catalogue-layout"><div className="catalogue-results"><div className="catalogue-filters"><label>Search products<input type="search" value={search} onChange={e=>{setSearch(e.target.value);setLimit(12);}} placeholder="Product, code or device model" /></label><label>Category<select value={category} onChange={e=>{setCategory(e.target.value);setLimit(12);}}><option>All categories</option>{wholesaleCategories.map(item=><option key={item}>{item}</option>)}</select></label></div>
+    <nav className="catalogue-categories" aria-label="Product categories">{['All categories','Cases','Protection',...wholesaleCategories.filter(item=>!['Cases','Protection'].includes(item))].map(item=><button key={item} type="button" aria-pressed={category===item} onClick={()=>changeCategory(item)}>{item==='All categories'?'All products':catalogueCategoryLabels[item]} <span>{item==='All categories'?wholesaleProducts.length:wholesaleProducts.filter(product=>product.category===item).length}</span></button>)}</nav>
+    <div className="catalogue-layout"><div className="catalogue-results"><div className="catalogue-filters"><label>Search products<input type="search" value={search} onChange={e=>{setSearch(e.target.value);setLimit(12);}} placeholder="Search a product, code or phone model" /></label><label>Sort by<select value={sort} onChange={e=>{setSort(e.target.value);setLimit(12);}}><option value="catalogue">Catalogue order</option><option value="name">Name: A–Z</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label></div>
+    {category!=='All categories' && <div className="catalogue-filters"><label>{category==='Cases'?'Case style':'Product type'}<select value={type} onChange={e=>{setType(e.target.value);setModel('');setLimit(12);}}><option value="">{category==='Cases'?'All case styles':'All product types'}</option>{types.map(item=><option key={item}>{item}</option>)}</select></label>{category==='Cases' && <label>Phone model<select value={model} onChange={e=>{setModel(e.target.value);setLimit(12);}}><option value="">All phone models</option>{models.map(item=><option key={item}>{item}</option>)}</select></label>}</div>}
+    <div className="catalogue-active"><p>{category==='All categories'?'All products':catalogueCategoryLabels[category]}{type?' / '+type:''}{model?' / '+model:''}</p>{(search||category!=='All categories'||sort!=='catalogue') && <button className="text-button" type="button" onClick={resetFilters}>Clear filters</button>}</div>
     <p className="catalogue-count" role="status">{products.length} products found{products.length>limit?' · showing '+limit:''}</p>
-    <div className="catalogue-grid">{products.slice(0,limit).map(product=><article className="catalogue-product" key={product.id}><CataloguePhoto product={product} /><p className="eyebrow">{wholesaleProductCollection(product)}</p><h3>{wholesaleProductName(product)}</h3><p className="catalogue-price">£{(product.cataloguePricePence/100).toFixed(2)} <span>iTop selling price</span></p>{product.code && <p className="catalogue-code">Product code: <strong>{product.code}</strong></p>}{wholesaleProductDetail(product) && <p className="catalogue-detail">{wholesaleProductDetail(product)}</p>}<button className="button button-outline" type="button" disabled={selection.some(item=>item.id===product.id)||selection.length>=12} onClick={()=>add(product.id)} aria-label={(selection.some(item=>item.id===product.id)?'Added: ':'Add to quote: ')+wholesaleProductName(product)}>{selection.some(item=>item.id===product.id)?'Added to list':'Add to quote'}</button></article>)}</div>
-    {!products.length && <div className="catalogue-empty"><h3>No matching products.</h3><p>Try a different code or model, or reset the filters. You can also describe an unlisted product in a quote request.</p><button className="text-button" type="button" onClick={()=>{setSearch('');setCategory('All categories');setLimit(12);}}>Reset filters</button></div>}
+    <div className="catalogue-grid">{products.slice(0,limit).map(product=><article className="catalogue-product" key={product.id}><CataloguePhoto product={product} /><p className="eyebrow">{catalogueProductType(product)}</p><h3>{wholesaleProductName(product)}</h3>{catalogueCaseModel(product) && <p className="catalogue-model">Listed model: <strong>{catalogueCaseModel(product)}</strong></p>}<p className="catalogue-price">£{(product.cataloguePricePence/100).toFixed(2)} <span>iTop selling price</span></p>{product.code && <p className="catalogue-code">Product code: <strong>{product.code}</strong></p>}{wholesaleProductDetail(product) && <p className="catalogue-detail">{wholesaleProductDetail(product)}</p>}<button className="button button-outline" type="button" disabled={selection.some(item=>item.id===product.id)||selection.length>=12} onClick={()=>add(product.id)} aria-label={(selection.some(item=>item.id===product.id)?'Added: ':'Add to quote: ')+wholesaleProductName(product)}>{selection.some(item=>item.id===product.id)?'Added to list':'Add to quote'}</button></article>)}</div>
+    {!products.length && <div className="catalogue-empty"><h3>No matching products.</h3><p>Try a different code or model, or reset the filters. You can also describe an unlisted product in a quote request.</p><button className="text-button" type="button" onClick={resetFilters}>Reset filters</button></div>}
     {products.length>limit && <button className="button button-dark catalogue-more" type="button" onClick={()=>setLimit(previous=>previous+12)}>Show more products</button>}
     </div><aside className="catalogue-cart" aria-labelledby="quote-list-heading"><h3 id="quote-list-heading">Your quote list <span>({selection.length}/12)</span></h3><p className="catalogue-cart-note">Add products, adjust quantities, then review your request.</p><p className="catalogue-feedback" role="status">{status}</p><form onSubmit={review}>
     {selection.length ? <div className="catalogue-selection">{selection.map((row,index)=>{const product=wholesaleProducts.find(item=>item.id===row.id)!;return <fieldset key={row.id}><legend>{wholesaleProductName(product)}</legend><div className="form-row"><label>Quantity<input type="number" inputMode="numeric" min={1} max={10000} step={1} required value={row.quantity} onChange={e=>update(row.id,'quantity',e.target.value)} aria-label={'Quantity for '+wholesaleProductName(product)} /></label><label>Unit<select value={row.unit} onChange={e=>update(row.id,'unit',e.target.value)} aria-label={'Unit for '+wholesaleProductName(product)}><option>Items</option><option>Packs</option></select></label></div><button className="text-button" type="button" aria-label={'Remove '+wholesaleProductName(product)} onClick={()=>{setSelection(previous=>previous.filter(item=>item.id!==row.id));setStatus(wholesaleProductName(product)+' removed from your quote list.');setError('');}}>Remove item {index+1}</button></fieldset>;})}</div> : <p className="catalogue-empty-list">Your list is empty. Add a product to begin.</p>}
@@ -47,3 +59,4 @@ function CataloguePhoto({product}:{product:{name:string}}) {
   if (!photo) return null;
   return <figure className={'catalogue-photo catalogue-photo-'+photo.style.toLowerCase()}><div className="catalogue-photo-window"><img src={siteHref(photo.path)} alt={photo.alt} loading="lazy" width={1290} height={1290} /></div><figcaption>{photo.caption}</figcaption></figure>;
 }
+

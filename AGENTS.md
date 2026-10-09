@@ -52,3 +52,6 @@ The owner authorised finishing the WhatsApp catalogue match. All 90 original pre
 
 
 The owner prefers direct embedded catalogue photos over blurry screen captures. Use the largest verified source available, retain full-size supplied style photos, and preserve confirmed selling prices and the current design.
+
+On 9 October 2026 the owner requested clearer wholesale browsing and category organisation while preserving the current design. Use customer-readable category buttons with counts, product-type filtering, case-style and listed-model filters, price/name sorting and visible reset controls. Keep original names and confirmed prices. Replacement screenshots will be supplied by the owner; reuse by verified matching style/model and do not claim thumbnail photos are full resolution.
+
