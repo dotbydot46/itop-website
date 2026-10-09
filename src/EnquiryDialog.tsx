@@ -4,6 +4,7 @@ import { RepairEnquiryFlow } from './RepairEnquiryFlow';
 import { WholesaleQuoteBuilder, type QuoteProduct } from './WholesaleQuoteBuilder';
 import { siteHref } from './sitePaths';
 import { MessageReview } from './MessageReview';
+import { AccessoriesEnquiryForm } from './AccessoriesEnquiryForm';
 
 export type EnquiryKind = 'Repair' | 'Accessories' | 'Trade' | 'Buy / sell' | 'Support';
 export type RepairPhone = { brand:string; model:string };
@@ -25,7 +26,7 @@ export function EnquiryDialog({ kind: initialKind, category, issue, phone, quote
   return <dialog ref={dialogRef} className="enquiry-dialog" aria-labelledby="dialog-title" onCancel={onClose} onClick={e => { if (e.target === e.currentTarget) onClose(); }}><div className="dialog-inner">
     <div className="dialog-top"><span className="eyebrow">LET’S TALK TECH</span><button className="icon-button" aria-label="Close enquiry" onClick={onClose}><X size={24} /></button></div>
     <h2 id="dialog-title" ref={headingRef} tabIndex={-1}>{kind === 'Choose' ? 'How can we help?' : (kind === 'Trade' ? 'Wholesale' : kind) + ' enquiry.'}</h2>
-    {kind === 'Choose' ? <div className="enquiry-choices">{choices.map(choice => <button key={choice.kind} onClick={() => setKind(choice.kind)}><strong>{choice.title}</strong><span>{choice.description}</span></button>)}<a className="business-choice" href={siteHref('business/')}><strong>iTop for Business</strong><span>Repairs, devices and accessories for your team.</span></a></div> : kind === 'Repair' ? <RepairEnquiryFlow issue={issue} phone={phone} /> : kind === 'Trade' ? <WholesaleQuoteBuilder initialItems={quoteItems} /> : <BasicEnquiryForm kind={kind} category={category} />}
+    {kind === 'Choose' ? <div className="enquiry-choices">{choices.map(choice => <button key={choice.kind} onClick={() => setKind(choice.kind)}><strong>{choice.title}</strong><span>{choice.description}</span></button>)}<a className="business-choice" href={siteHref('business/')}><strong>iTop for Business</strong><span>Repairs, devices and accessories for your team.</span></a></div> : kind === 'Repair' ? <RepairEnquiryFlow issue={issue} phone={phone} /> : kind === 'Trade' ? <WholesaleQuoteBuilder initialItems={quoteItems} /> : kind === 'Accessories' ? <AccessoriesEnquiryForm selection={category} /> : <BasicEnquiryForm kind={kind} category={category} />}
   </div></dialog>;
 }
 
