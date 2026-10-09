@@ -440,7 +440,7 @@ footer { flex-wrap:wrap; align-items:center; }
 
 /* Contact actions and clearly labelled visit details. */
 .contact-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px; }
-.contact-actions .button { padding:16px 12px; text-align:center; }
+.contact-hero .contact-actions .button { min-width:0; padding:16px 12px; text-align:center; }
 .contact-actions .button-outline { border:1px solid var(--ink); }
 .contact-actions .text-button { min-height:44px; display:flex; align-items:center; }
 .contact-hero .contact-phone { font-size:14px; line-height:1.6; margin:18px 0 0; }
@@ -465,3 +465,4 @@ footer { flex-wrap:wrap; align-items:center; }
   .contact-details .visit-actions a { min-height:44px; display:inline-flex; align-items:center; }
   .contact-help .button { width:100%; }
 }
+
