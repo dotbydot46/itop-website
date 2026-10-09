@@ -17,6 +17,14 @@ test('product types separate similar named products without losing quote identit
   assert.ok(result.every(p=>wholesaleProducts.includes(p)));
   assert.equal(browseCatalogue({category:'Audio',type:'Privacy screen protectors'}).length,0);
 });
+test('model filtering treats source spelling variations as the same model',()=>{
+  const model=name=>catalogueCaseModel({category:'Cases',name:'Shiny Case — '+name});
+  assert.equal(model('iPhone 15 Pro Max'),model('15 Pro MAX'));
+  assert.equal(model('S25/S24'),model('S24 / S25'));
+  assert.equal(model('A05s'),model('A05S'));
+  assert.notEqual(model('A32 4G'),model('A32 5G'));
+  assert.equal(model('A51 4G?5G?'),'A51 4G?5G?');
+});
 test('price sorting does not change source order or prices',()=>{
   const before=JSON.stringify(wholesaleProducts);
   const result=browseCatalogue({sort:'price-low'});

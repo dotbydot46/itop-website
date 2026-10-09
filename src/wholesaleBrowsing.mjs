@@ -16,7 +16,12 @@ export function catalogueProductType(product) {
 }
 
 export function catalogueCaseModel(product) {
-  return product.category==='Cases' ? product.name.split(' Case — ')[1] || '' : '';
+  const model=product.category==='Cases' ? product.name.split(' Case — ')[1] || '' : '';
+  return model.replace(/\biPhone\s*/gi,'').split('/').map(part=>part.trim()
+    .replace(/\bpro\b/gi,'Pro').replace(/\bmax\b/gi,'Max').replace(/\bplus\b/gi,'Plus')
+    .replace(/\bultra\b/gi,'Ultra').replace(/\bair\b/gi,'Air')
+    .replace(/\b([as]\d+)(s|u|fe)?\b/gi,(_,base,suffix)=>base.toUpperCase()+(suffix?.toUpperCase()||'')))
+    .sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})).join(' / ');
 }
 
 export function browseCatalogue({search='',category='All categories',type='',model='',sort='catalogue'}={}) {
