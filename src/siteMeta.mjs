@@ -7,7 +7,7 @@ const descriptions = {
   repairs: ['Device Repair Enquiries | iTop Catford', 'Choose your phone model or describe a tablet, laptop or gadget fault. Ask iTop in Catford to confirm repair options, parts, price and timing.'],
   accessories: ['Phone & Gadget Accessories | iTop Catford', 'Explore cases, screen protectors, cables, chargers, power banks and audio accessories. Ask iTop in Catford about fit, current stock and retail prices.'],
   wholesale: ['Wholesale Product Catalogue | iTop Catford', 'Browse iTop wholesale products by category, model and style. Choose products and quantities, then request confirmation of pricing and availability.'],
-  'buy-sell': ['Buy & Sell Device Enquiries | iTop Catford', 'Ask about used or refurbished devices, or prepare a selling enquiry for an in-store valuation at iTop in Catford.'],
+  'buy-sell': ['Sell Your iPhone & Buy Device Enquiries | iTop Catford', 'Get an estimated offer for selected iPhones or request a manual quote. Ask about buying a device or selling through iTop in Catford.'],
   contact: ['Visit & Contact | iTop Catford', 'Find iTop at 160 Rushey Green, London SE6 4HQ. Check shop opening hours, get directions, call or contact the team through WhatsApp.'],
   support: ['Warranty & Aftercare | iTop Catford', 'Questions about a repair or purchase? Review aftercare guidance and ask iTop about the terms agreed for your individual device or accessory.'],
 };
