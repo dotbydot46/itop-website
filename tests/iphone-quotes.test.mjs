@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { parseIPhonePrices, getIPhoneQuote, buildIPhoneMessage } from '../src/iphoneQuotes.mjs';
+import { parseIPhonePrices, getIPhoneQuote, buildIPhoneMessage, explainIPhoneQuote } from '../src/iphoneQuotes.mjs';
 const csv = fs.readFileSync(new URL('../src/iphone-prices.csv', import.meta.url), 'utf8');
 const prices = parseIPhonePrices(csv);
 const now = new Date('2026-10-10T12:00:00Z');
 const fixture = { ...prices[0], cexCash:123, override:null, checkedAt:'2026-10-10', enabled:true };
-const details = { ...fixture, mode: 'direct', faults: 'no', battery: '88' };
+const details = { ...fixture, mode: 'direct', faults: 'no', batteryStatus: 'no', battery: '88' };
 const sample = [fixture];
 
 test('all verified reference rows produce a cash-price plus £20 offer', () => {
@@ -48,4 +48,18 @@ test('preview includes the verified estimate and source, while broker/fault flow
   assert.match(override,/iTop set price/); assert.doesNotMatch(override,/CeX cash|\+ £20/);
   assert.throws(()=>buildIPhoneMessage(prices,{model:' '},now));
 });
-
+test('battery warnings, symptoms and uncertainty require inspection without inventing deductions', () => {
+  for (const batteryStatus of ['', 'service', 'problem', 'unknown']) {
+    const batteryDetails = { ...details, batteryStatus };
+    assert.equal(getIPhoneQuote(sample, batteryDetails, now), null);
+    assert.match(explainIPhoneQuote(sample, batteryDetails, now), /check the battery/);
+    const message = buildIPhoneMessage(sample, batteryDetails, now);
+    assert.match(message, /manual quote/);
+    assert.doesNotMatch(message, /Estimated iTop offer|CeX cash/);
+  }
+  for (const battery of ['', '79', '88', '100']) {
+    assert.equal(getIPhoneQuote(sample, {...details, battery}, now).offer, 143);
+  }
+  assert.match(buildIPhoneMessage(sample, {...details,batteryStatus:'service'},now), /Battery status: Service \/ replacement warning/);
+  assert.match(buildIPhoneMessage(sample, {...details,faults:'unknown'},now), /Known faults: Not sure \/ unable to check/);
+});

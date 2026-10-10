@@ -2,6 +2,8 @@ export const IPHONE_BONUS = 20;
 export const REFERENCE_MAX_DAYS = 7;
 const columns = ['id', 'model', 'storage', 'colour', 'network', 'grade', 'cexCash', 'checkedAt', 'sourceUrl', 'override', 'enabled'];
 export const conditionLabels = { A: 'Like new, boxed with original accessories', B: 'Good, fully working with essential accessories', C: 'Worn, fully working with essential accessories', faulty: 'Damaged or faulty', unknown: 'Not sure' };
+export const batteryStatusLabels = { no: 'No battery warning or problems noticed', service: 'Service / replacement warning', problem: 'Charging, overheating or unexpected shutdown problems', unknown: 'Not sure / unable to check' };
+const batteryNeedsInspection = details => details.batteryStatus !== undefined && details.batteryStatus !== 'no';
 
 // Quoted CSV cells allow spreadsheet exports without changing names or URLs.
 export function parseIPhonePrices(csv) {
@@ -40,7 +42,7 @@ export function parseIPhonePrices(csv) {
 }
 
 export function getIPhoneQuote(prices, details, now = new Date()) {
-  if (details.mode === 'broker' || details.faults !== 'no' || !['A', 'B', 'C'].includes(details.grade)) return null;
+  if (details.mode === 'broker' || details.faults !== 'no' || batteryNeedsInspection(details) || !['A', 'B', 'C'].includes(details.grade)) return null;
   const record = prices.find(row => row.enabled && ['model', 'storage', 'colour', 'network', 'grade'].every(key => row[key] === details[key]));
   if (!record) return null;
   const days = (now.getTime() - new Date(record.checkedAt + 'T00:00:00Z').getTime()) / 86400000;
@@ -50,6 +52,7 @@ export function getIPhoneQuote(prices, details, now = new Date()) {
 
 export function explainIPhoneQuote(prices, details, now = new Date()) {
   if (getIPhoneQuote(prices, details, now)) return '';
+  if (batteryNeedsInspection(details)) return 'We need to check the battery before estimating an offer. Send the warning or symptoms with your inspection request.';
   if (details.faults !== 'no' || details.grade === 'faulty') return 'Damage, battery problems or uncertain faults need an inspection before we can estimate a fair offer.';
   if (details.grade === 'unknown') return 'We’ll help assess the condition before quoting.';
   if (details.network !== 'Unlocked') return 'We need to confirm the network status before quoting this device.';
@@ -65,7 +68,7 @@ export function buildIPhoneMessage(prices, details, now = new Date()) {
   const quote = getIPhoneQuote(prices, details, now);
   const broker = details.mode === 'broker';
   const lines = [broker ? 'Hi iTop, I’d like to discuss selling my iPhone through you.' : 'Hi iTop, I’d like an inspection and offer for my iPhone.'];
-  for (const [label, value] of [['Model', details.model], ['Storage', details.storage], ['Colour', details.colour], ['Network', details.network], ['Condition', conditionLabels[details.grade]], ['Known faults', details.faults === 'no' ? 'None reported' : 'Yes / unsure'], ['Battery health', clean(details.battery) ? clean(details.battery) + '%' : 'Not supplied'], ['Details', details.notes]]) if (clean(value)) lines.push(label + ': ' + clean(value));
+  for (const [label, value] of [['Model', details.model], ['Storage', details.storage], ['Colour', details.colour], ['Network', details.network], ['Condition', conditionLabels[details.grade]], ['Known faults', details.faults === 'no' ? 'None reported' : details.faults === 'unknown' ? 'Not sure / unable to check' : 'Yes / unsure'], ['Battery status', batteryStatusLabels[details.batteryStatus]], ['Battery health', clean(details.battery) ? clean(details.battery) + '%' : 'Not supplied'], ['Details', details.notes]]) if (clean(value)) lines.push(label + ': ' + clean(value));
   if (broker) lines.push('Please discuss an agreed selling price, fees and payout terms. One month is a target, not a guaranteed sale.');
   else if (quote) {
     lines.push('Estimated iTop offer: £' + quote.offer.toFixed(2));

@@ -40,3 +40,9 @@ Selling through iTop is a separate enquiry with a one-month target. Fees, payout
 
 Sources: each price row links its checked CeX listing. [Apple model identification](https://support.apple.com/en-gb/108044) informs names and capacities. [CeX grading guidance](https://uk.support.webuy.com/support/solutions/articles/80001011621-how-are-your-items-graded-) informs condition labels.
 
+# Condition and battery review
+
+Customer condition choices distinguish cosmetic wear from cracks and failed features, with guidance for missing accessories and uncertain condition. Battery status is a required website answer, separate from optional maximum-capacity percentage. Service warnings, reported battery problems and uncertainty receive an inspection enquiry, without an instant monetary offer. The request carries battery status, percentage and notes for staff review.
+
+No battery-percentage threshold or damage deduction has been agreed. Percentage alone does not change the checked exact-variant price. Do not add fixed deductions or claim a final payout until iTop approves its policy. Existing £20 uplift, grade-specific reference prices, expiry and inspection requirements remain unchanged.
+
