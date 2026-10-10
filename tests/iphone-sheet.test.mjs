@@ -8,6 +8,20 @@ const prices=parseIPhonePrices(fs.readFileSync(new URL('../src/iphone-prices.csv
 const now=new Date('2026-10-10T12:00:00Z');
 const values=records=>[iphoneSheetHeaders,...records.map(row=>iphoneSheetHeaders.map(key=>row[key]??''))];
 
+test('supported modern iPhones cover each released capacity, listed colour and working grade',()=>{
+  const models=iphoneModels.filter(model=>Number(model.match(/^iPhone (\d+)/)?.[1])>=11 || model==='iPhone Air' || model==='iPhone SE (2nd Generation)' || model==='iPhone SE (3rd Generation)');
+  assert.equal(models.length,33);
+  for(const model of models){
+    const colours=[...new Set(prices.filter(row=>row.model===model).map(row=>row.colour))];
+    assert.ok(colours.length>=2,model);
+    for(const storage of iphoneStorageOptions(model))for(const colour of colours)for(const grade of ['A','B','C']){
+      const quote=getIPhoneQuote(prices,{mode:'direct',model,storage,colour,network:'Unlocked',grade,faults:'no'},now);
+      assert.ok(quote,`${model} ${storage} ${colour} ${grade}`);
+      assert.equal(quote.offer,quote.record.cexCash+20);
+    }
+  }
+});
+
 test('iPhone 18 Pro Max has a checked quote for every listed unlocked storage, colour and grade',()=>{
   for(const storage of ['256GB','512GB','1TB','2TB'])for(const colour of ['Black','Silver','Glacier','Burgundy'])for(const grade of ['A','B','C']){
     const details={mode:'direct',model:'iPhone 18 Pro Max',storage,colour,network:'Unlocked',grade,faults:'no'};
