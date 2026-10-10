@@ -2,7 +2,9 @@
 
 The private [iTop master sheet](https://docs.google.com/spreadsheets/d/1A9Isn4tKjhxUyJXOK4uaFJakaK4PEpYDCWf7jeu4oi0/edit) is the editing source. The website reads a validated published snapshot in `src/iphone-prices.csv`. Editing the sheet does not immediately change customer prices. Publishing is reviewed; automatic CeX refresh and automatic sheet publishing are future work.
 
-The 10 October 2026 snapshot contains 93 checked exact variants across 33 models, from iPhone 11 onwards plus SE (2nd / 3rd generation) and Air. This includes Pro, Pro Max, mini and Plus models. All 54 identified iPhone models are selectable for enquiries, independently of price coverage. Not every storage, colour, network or grade is priced.
+The 10 October 2026 snapshot contains 138 checked exact variants across 33 models, from iPhone 11 onwards plus SE (2nd / 3rd generation) and Air. This includes Pro, Pro Max, mini and Plus models. All 54 identified iPhone models are selectable for enquiries, independently of price coverage. Not every storage, colour, network or grade is priced.
+
+iPhone 18 Pro Max now covers all 48 listed unlocked combinations: 256GB, 512GB, 1TB and 2TB; Black, Silver, Glacier and Burgundy; grades A, B and C. Include out-of-stock listings when checking CeX buying prices: retail availability does not determine whether a cash reference is listed. Each imported variant still needs its own visible cash buying price, product ID and source URL. Locked, faulty, uncertain and expired combinations remain manual enquiries.
 
 ## Staff workflow
 

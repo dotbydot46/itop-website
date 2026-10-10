@@ -8,6 +8,17 @@ const prices=parseIPhonePrices(fs.readFileSync(new URL('../src/iphone-prices.csv
 const now=new Date('2026-10-10T12:00:00Z');
 const values=records=>[iphoneSheetHeaders,...records.map(row=>iphoneSheetHeaders.map(key=>row[key]??''))];
 
+test('iPhone 18 Pro Max has a checked quote for every listed unlocked storage, colour and grade',()=>{
+  for(const storage of ['256GB','512GB','1TB','2TB'])for(const colour of ['Black','Silver','Glacier','Burgundy'])for(const grade of ['A','B','C']){
+    const details={mode:'direct',model:'iPhone 18 Pro Max',storage,colour,network:'Unlocked',grade,faults:'no'};
+    const quote=getIPhoneQuote(prices,details,now);
+    assert.ok(quote,`${storage} ${colour} ${grade}`);
+    assert.equal(quote.offer,quote.record.cexCash+20);
+    assert.equal(getIPhoneQuote(prices,{...details,faults:'yes'},now),null);
+    assert.equal(getIPhoneQuote(prices,{...details,network:'Locked'},now),null);
+  }
+});
+
 test('every agreed modern model has at least one checked exact variant',()=>{
   const priority=iphoneModels.filter(model=>Number(model.match(/^iPhone (\d+)/)?.[1])>=11 || model==='iPhone Air' || /SE \([23]rd Generation\)|SE \(2nd Generation\)/.test(model));
   for(const model of priority)assert.ok(prices.some(row=>row.model===model),model);
