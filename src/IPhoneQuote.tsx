@@ -16,7 +16,12 @@ export function IPhoneQuote() {
   const [stage, setStage] = useState<'form' | 'result' | 'review'>('form');
   const [message, setMessage] = useState('');
   const heading = useRef<HTMLHeadingElement>(null);
-  useEffect(() => { if (stage !== 'form') heading.current?.focus(); }, [stage]);
+  useEffect(() => {
+    if (stage !== 'form') {
+      heading.current?.focus({ preventScroll: true });
+      heading.current?.scrollIntoView({ block: 'start' });
+    }
+  }, [stage]);
   const resolved = { ...details, model: details.model === 'other' ? otherModel.trim() : details.model, colour: details.colour === 'other' ? otherColour.trim() : details.colour };
   const quote = getIPhoneQuote(prices, resolved);
   const broker = details.mode === 'broker';
