@@ -1,16 +1,20 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { accessoryCategories, accessoryCategory } from './accessoryChoices';
 import { MessageReview } from './MessageReview';
+import retailProducts from './retail-products.json';
+import { publishedRetailProducts, retailMoney } from './retailProducts.mjs';
 
 export function AccessoriesEnquiryForm({ selection }: { selection: string }) {
+  const selectedProduct = publishedRetailProducts(retailProducts).find(product=>selection==='retail:'+product.id);
   const initialCategory = accessoryCategories.find(category => category.title === selection);
-  const [item, setItem] = useState(accessoryCategory(selection) ? selection : '');
+  const [item, setItem] = useState(selectedProduct?.name ?? (accessoryCategory(selection) ? selection : ''));
   const [draft, setDraft] = useState<Record<string, string>>({});
   const [message, setMessage] = useState('');
   const [review, setReview] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const detailsRef = useRef<HTMLTextAreaElement>(null);
-  const category = accessoryCategory(item) || (item ? '' : initialCategory?.title);
+  const activeProduct = selectedProduct && item===selectedProduct.name ? selectedProduct : undefined;
+  const category = activeProduct?.category || accessoryCategory(item) || (item ? '' : initialCategory?.title);
   useEffect(() => { headingRef.current?.focus(); }, [review]);
 
   function prepare(event: FormEvent<HTMLFormElement>) {
@@ -25,6 +29,7 @@ export function AccessoriesEnquiryForm({ selection }: { selection: string }) {
     setDraft(Object.fromEntries([...values.entries()].map(([key, value]) => [key, String(value)])));
     const lines = ['Hi iTop, I’d like to ask about an accessory.'];
     if (category) lines.push('Category: ' + category);
+    if (activeProduct) lines.push('Retail product reference: '+activeProduct.id,'Listed retail price per item: '+retailMoney(activeProduct.pricePence),'Please confirm current availability and the right fit.');
     for (const [label, value] of values.entries()) if (String(value).trim()) lines.push(label + ': ' + String(value).trim());
     setMessage(lines.join('\n'));
     setReview(true);
@@ -36,6 +41,7 @@ export function AccessoriesEnquiryForm({ selection }: { selection: string }) {
       <form onSubmit={prepare}>
         <label>Accessory (required)<select name="Accessory" value={item} required onChange={event => { setItem(event.target.value); detailsRef.current?.setCustomValidity(''); }}>
           <option value="" disabled>Choose an accessory</option>
+          {selectedProduct && <option>{selectedProduct.name}</option>}
           {accessoryCategories.map(group => <optgroup label={group.title} key={group.title}>{group.items.map(option => <option key={option}>{option}</option>)}</optgroup>)}
           <option>Other accessory</option>
         </select></label>

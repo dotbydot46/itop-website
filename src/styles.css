@@ -414,6 +414,21 @@ footer { flex-wrap:wrap; align-items:center; }
 .accessory-item-choices button:hover { color:#004f6f; }
 .product .accessory-photo-note { font-size:12px; line-height:1.5; margin-top:14px; }
 .accessory-delivery-link { display:flex; width:fit-content; margin-top:24px; }
+.accessory-delivery { background:#f3f5f6; scroll-margin-top:24px; }
+.accessory-delivery ol { padding-left:22px; margin-bottom:24px; }
+.accessory-delivery li { margin-bottom:12px; line-height:1.6; }
+.accessory-delivery .button { white-space:normal; }
+.retail-catalogue { padding:40px 3.85%; scroll-margin-top:24px; }
+.retail-catalogue h2 { font-size:clamp(30px,4vw,46px); letter-spacing:-.04em; }
+.retail-catalogue>p { line-height:1.6; margin:16px 0; }
+.retail-product-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.retail-product { border:1px solid #d8dce0; padding:24px; overflow-wrap:anywhere; }
+.retail-product img { width:100%; aspect-ratio:1; object-fit:contain; margin-bottom:18px; }
+.retail-product h3 { font-size:24px; line-height:1.2; margin:12px 0; }
+.retail-product p { line-height:1.6; margin-bottom:16px; }
+.retail-product .retail-price { font-size:26px; font-weight:700; }
+.retail-product .button { min-width:0; width:100%; white-space:normal; }
+@media(max-width:720px) { .retail-catalogue { padding:32px 24px; } .retail-product-grid { grid-template-columns:1fr; } }
 .accessory-form-help { color:var(--muted); font-size:13px; line-height:1.5; margin:-8px 0 20px; }
 @media(max-width:720px) { .accessory-shortcuts { padding:0 24px 24px; } .accessory-form-row { grid-template-columns:1fr 1fr; gap:12px; } }
 
@@ -484,4 +499,3 @@ body:has(.enquiry-dialog[open]) { overflow:hidden; }
 .enquiry-dialog { scroll-padding-top:68px; }
 .iphone-quote { background:#f3f5f6; scroll-margin-top:24px; align-items:start; } .iphone-quote-intro>p:not(.eyebrow) { margin-top:20px; line-height:1.65; } .iphone-quote-panel { background:white; padding:28px; min-width:0; } .iphone-quote-panel select { text-overflow:ellipsis; } .iphone-quote-result>p { margin:16px 0; line-height:1.6; } .iphone-quote-result .iphone-offer { font-size:clamp(42px,6vw,64px); line-height:1.1; font-weight:800; letter-spacing:-.045em; color:var(--ink); } .iphone-quote-panel .flow-title:focus { outline:2px solid #007eb1; outline-offset:5px; } @media(max-width:720px) { .iphone-quote-panel { padding:22px 16px; } .iphone-quote .dialog-actions { gap:20px; } }
 .iphone-quote-panel .flow-title { scroll-margin-top:24px; }
-
