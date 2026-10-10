@@ -48,6 +48,17 @@ export function getIPhoneQuote(prices, details, now = new Date()) {
   return { record, offer: Math.round((record.override ?? record.cexCash + IPHONE_BONUS) * 100) / 100, usesReference: record.override === null };
 }
 
+export function explainIPhoneQuote(prices, details, now = new Date()) {
+  if (getIPhoneQuote(prices, details, now)) return '';
+  if (details.faults !== 'no' || details.grade === 'faulty') return 'Damage, battery problems or uncertain faults need an inspection before we can estimate a fair offer.';
+  if (details.grade === 'unknown') return 'We’ll help assess the condition before quoting.';
+  if (details.network !== 'Unlocked') return 'We need to confirm the network status before quoting this device.';
+  const match = prices.find(row => ['model', 'storage', 'colour', 'network', 'grade'].every(key => row[key] === details[key]));
+  if (match && !match.enabled) return 'This price is currently paused or awaiting review.';
+  if (match) return 'This reference is due for a fresh price check.';
+  return 'We don’t yet have a checked price for this exact model, storage, colour and condition.';
+}
+
 export function buildIPhoneMessage(prices, details, now = new Date()) {
   const clean = value => String(value ?? '').trim();
   if (!clean(details.model)) throw new Error('Choose or describe your iPhone.');
@@ -64,4 +75,3 @@ export function buildIPhoneMessage(prices, details, now = new Date()) {
   } else lines.push('Please provide a manual quote; no instant estimate is available for these details.');
   return lines.join('\n');
 }
-

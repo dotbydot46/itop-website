@@ -1,34 +1,40 @@
 # Maintaining iPhone buying offers
 
-The editable spreadsheet source is `src/iphone-prices.csv`. Open it in Excel or another spreadsheet, edit rows and save as UTF-8 CSV with the same column names. Publish the website after editing; changing a downloaded copy alone does not update the live website. There is no customer-accessible admin panel.
+The private [iTop master sheet](https://docs.google.com/spreadsheets/d/1A9Isn4tKjhxUyJXOK4uaFJakaK4PEpYDCWf7jeu4oi0/edit) is the editing source. The website reads a validated published snapshot in `src/iphone-prices.csv`. Editing the sheet does not immediately change customer prices. Publishing is reviewed; automatic CeX refresh and automatic sheet publishing are future work.
 
-The first snapshot contains 15 exact variants across seven iPhone models, read from the displayed CeX product pages on 10 October 2026. These are cash buying values, not voucher or retail values. This is a starter catalogue, not every iPhone, storage, colour or grade. Other variants remain manual enquiries. No photos or product descriptions were copied.
+The 10 October 2026 snapshot contains 93 checked exact variants across 33 models, from iPhone 11 onwards plus SE (2nd / 3rd generation) and Air. This includes Pro, Pro Max, mini and Plus models. All 54 identified iPhone models are selectable for enquiries, independently of price coverage. Not every storage, colour, network or grade is priced.
 
-## Columns
+## Staff workflow
 
-| Column | Meaning |
-| --- | --- |
-| id | CeX product ID matching the source URL |
-| model, storage, colour, network, grade | Exact variant; grades A/B/C are condition reference categories |
-| cexCash | Verified cash buying price in pounds, without a £ symbol |
-| checkedAt | Actual date the reference was checked, YYYY-MM-DD |
-| sourceUrl | Matching HTTPS CeX product-detail URL |
-| override | Optional iTop offer in pounds; blank uses cexCash + £20 |
-| enabled | true offers estimates; false pauses the variant |
+1. In **iPhone prices**, set Approval to **Draft** before editing.
+2. Check the matching CeX listing's **cash buying value**, and enter its exact model, capacity, colour, network, grade, product ID, URL and actual check date. Use the model dropdown and **iPhone models** tab for names and released capacities.
+3. Leave Override blank for **CeX cash + £20**, or enter an intentional iTop offer. Use **Paused** to stop offering a variant. Review and mark **Approved** once correct.
+4. Confirm Action says **Ready for review**. Draft, paused, incomplete, duplicate, invalid and expired rows cannot produce enabled exports. Formula and table capacity is 500 variants; extend master, table and export together beyond that.
+5. Ask the website maintainer to import and publish the checked **Website export** snapshot. Keep the sheet private; no credentials or public sharing are required.
 
-Never refresh the check date without checking the source. Use an override to preserve an intentional iTop price when updating a reference; leave it blank to use the £20 rule. An override also needs a current reference check, but the customer sees “price set by iTop”, not a claimed £20 comparison.
+The £20 and seven-day sheet controls describe the agreed website policy. Changing those controls alone does not change website rules. Keep them aligned with `IPHONE_BONUS` and `REFERENCE_MAX_DAYS`; use per-row overrides for individual offers.
 
-References stop producing instant estimates after seven days and fall back to a manual quote. This is an implementation maintenance safeguard, not an offer reservation period. Review the CSV at least weekly, then rebuild and publish. The expiry can be adjusted in `REFERENCE_MAX_DAYS` if the owner approves a different maintenance schedule.
+## Reusable website connection
 
-The quote requires exact model/storage/colour/network/grade matching, a fully working condition and no reported faults. Unknown details, faults, disabled variants and stale/future-dated references never borrow another variant's price. Final inspection may change the grade and offer. No online sale/payment, binding quote, automated CeX synchronisation or account administration is implemented.
+Read **Website export!A1:K501** using the connected Google Sheets tool and save its values result as JSON, or download that tab as UTF-8 CSV. Preview with:
 
-## Selling through iTop
+```sh
+node scripts/import-iphone-sheet.mjs website-export.csv
+```
 
-The separate route is an enquiry to discuss an agreed price and a one-month selling target. It shows no estimated payout. Fees, payment timing and handling an unsold device must be agreed before taking it. The instant buying offer is excluded from this message.
+The importer also accepts JSON with `values` or `structuredContent.values`. It validates headers, released model/capacity, source/ID, money, duplicates, dates and enabled price freshness. It lists added, changed and removed IDs without writing. Review the list, then run with `--write` to update the snapshot and sync record.
 
-## Checks
+Run enquiry tests, TypeScript checks, Pages build and Pages tests, then publish. A successful GitHub Pages deployment updates the live website. The current native sheet import preserved all 15 existing records and added 78 checked variants.
 
-Run the enquiry tests, TypeScript check, Pages build and Pages tests before publication. CSV parsing rejects duplicate IDs/variants, invalid source/date/money and malformed rows. Pricing tests cover exact matching, £20 calculation, overrides, expiry, manual fallbacks and route-specific messages.
+Incomplete drafts must be completed or excluded from an import; malformed data stops publication. Complete paused/draft records import as disabled. The website independently checks freshness at quote time.
 
-Sources: each CSV row links its checked CeX listing. Condition reference: https://uk.support.webuy.com/support/solutions/articles/80001011621-how-are-your-items-graded-
+## Price rules and customer journey
+
+Export columns are `id,model,storage,colour,network,grade,cexCash,checkedAt,sourceUrl,override,enabled`. Money is in pounds, dates are YYYY-MM-DD, grades are A/B/C, and CeX source URLs must match product IDs. Never refresh a date without checking the listing. Overrides also require a current reference; customers see an iTop-set offer rather than a £20 comparison.
+
+References expire after seven days, so review at least weekly. Unknown details, faults, paused variants and missing/stale references lead to a manual quote with an explanation. Storage follows the selected model; changing it clears incompatible selections. Final condition, ownership and account-lock checks happen at inspection. Customers review before choosing to send through WhatsApp. No sale or payment happens online.
+
+Selling through iTop is a separate enquiry with a one-month target. Fees, payout, payment timing and unsold-device handling must be agreed before taking the device. No sale or higher payout is promised.
+
+Sources: each price row links its checked CeX listing. [Apple model identification](https://support.apple.com/en-gb/108044) informs names and capacities. [CeX grading guidance](https://uk.support.webuy.com/support/solutions/articles/80001011621-how-are-your-items-graded-) informs condition labels.
 
