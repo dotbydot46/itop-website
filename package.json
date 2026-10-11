@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/check-retail-products.mjs && vite build && node scripts/prepare-sites-build.mjs",
-    "build:pages": "node scripts/check-retail-products.mjs && vite build --base /itop-website/ && node scripts/prepare-pages-build.mjs",
+    "build:pages": "node scripts/check-retail-products.mjs && vite build --base / && node scripts/prepare-pages-build.mjs",
     "test:retail": "node --test tests/retail-products.test.mjs",
     "test:pages": "node --test tests/pages-build.test.mjs tests/site-meta.test.mjs",
     "preview": "vite preview",

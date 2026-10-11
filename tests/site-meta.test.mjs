@@ -3,6 +3,10 @@ import assert from 'node:assert/strict';
 import {publishedRoutes, sitePageMeta, siteUrl} from '../src/siteMeta.mjs';
 import {readFile} from 'node:fs/promises';
 const esc = value => value.replaceAll('&','&amp;').replaceAll('"','&quot;');
+
+test('public metadata uses the agreed business domain',()=>{
+  assert.equal(siteUrl, 'https://itopgroup.co.uk/');
+});
 test('every published route has static titles, descriptions and matching canonical URLs',async()=>{
   for(const route of publishedRoutes){
     const meta=sitePageMeta(route), html=await readFile(`dist/client/${route}index.html`,'utf8');
@@ -19,4 +23,3 @@ test('every published route has static titles, descriptions and matching canonic
   assert.ok(!notFound.includes('rel="canonical"'));
   for(const route of ['unknown','repairs/apple/unknown','wholesale/missing']) assert.equal(sitePageMeta(route).indexable,false);
 });
-

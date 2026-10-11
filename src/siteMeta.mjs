@@ -1,7 +1,7 @@
 import { businessPageMeta } from './businessPageMeta.mjs';
 import { findRepairPage, repairPageMeta, repairPageRoutes } from './repairCatalogue.mjs';
 
-export const siteUrl = 'https://dotbydot46.github.io/itop-website/';
+export const siteUrl = 'https://itopgroup.co.uk/';
 const descriptions = {
   '': ['iTop Phones & Repair Center | Catford', 'Phone, laptop and gadget repair enquiries, accessories, buy and sell, and wholesale supply at iTop, 160 Rushey Green, Catford, London SE6 4HQ.'],
   repairs: ['Device Repair Enquiries | iTop Catford', 'Choose your phone model or describe a tablet, laptop or gadget fault. Ask iTop in Catford to confirm repair options, parts, price and timing.'],
@@ -24,4 +24,3 @@ export function sitePageMeta(route) {
   if (!meta) return {title:'Page not found | iTop Catford', description:'This page is unavailable. Browse iTop services or contact the shop for help.', indexable:false, canonical:null};
   return {...meta, indexable:true, canonical:siteUrl + (clean ? clean + '/' : '')};
 }
-
