@@ -495,6 +495,22 @@ footer { flex-wrap:wrap; align-items:center; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
 .dialog-top { position:sticky; top:0; z-index:2; background:white; padding:8px 0; }
+.analytics-consent { position:fixed; z-index:8; bottom:20px; left:3.85%; right:3.85%; display:flex; align-items:center; justify-content:space-between; gap:28px; padding:24px; background:white; color:#20242a; border:1px solid #c8cbd0; box-shadow:0 8px 32px #0002; max-height:calc(100dvh - 100px); overflow:auto; }
+.analytics-consent h2 { font-size:20px; letter-spacing:-.025em; margin:0 0 8px; }
+.analytics-consent p { font-size:14px; line-height:1.6; margin:0 0 8px; max-width:660px; }
+.analytics-consent .text-button { font-size:14px; }
+.analytics-consent-actions { display:flex; gap:12px; flex-shrink:0; }
+.analytics-consent-actions .button { min-width:160px; }
+.analytics-settings { font-size:14px; }
+.analytics-storage-note { font-size:13px; }
+.privacy-content { display:block; max-width:1000px; }
+.privacy-content h2 { font-size:28px; margin:36px 0 16px; }
+.privacy-content h2:first-child { margin-top:0; }
+.privacy-content p { line-height:1.75; max-width:780px; }
+.privacy-content p a { text-decoration:underline; text-underline-offset:3px; }
+body:has(.navigation.is-open) .analytics-consent { display:none; }
+@media(max-width:900px) { .analytics-consent { flex-direction:column; align-items:stretch; gap:16px; } .analytics-consent-actions .button { flex:1; } }
+@media(max-width:720px) { .analytics-consent { bottom:0; left:0; right:0; padding:20px 20px calc(20px + env(safe-area-inset-bottom)); } .analytics-consent-actions { gap:8px; } .analytics-consent-actions .button { min-width:0; padding:14px 12px; font-size:14px; } }
 body:has(.enquiry-dialog[open]) { overflow:hidden; }
 .enquiry-dialog { scroll-padding-top:68px; }
 .iphone-quote { background:#f3f5f6; scroll-margin-top:24px; align-items:start; } .iphone-quote-intro>p:not(.eyebrow) { margin-top:20px; line-height:1.65; } .iphone-quote-panel { background:white; padding:28px; min-width:0; } .iphone-quote-panel select { text-overflow:ellipsis; } .iphone-quote-result>p { margin:16px 0; line-height:1.6; } .iphone-quote-result .iphone-offer { font-size:clamp(42px,6vw,64px); line-height:1.1; font-weight:800; letter-spacing:-.045em; color:var(--ink); } .iphone-quote-panel .flow-title:focus { outline:2px solid #007eb1; outline-offset:5px; } @media(max-width:720px) { .iphone-quote-panel { padding:22px 16px; } .iphone-quote .dialog-actions { gap:20px; } }
